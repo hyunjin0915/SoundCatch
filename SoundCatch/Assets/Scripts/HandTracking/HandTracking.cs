@@ -161,10 +161,6 @@ public class HandTracking : MonoBehaviour
         
         switch (hand)
         {
-            case HandGesture.paper:
-                isHandRock = false;
-                rockTime = 0.0f;
-                break;
             case HandGesture.rock:
                 isHandRock = true;
 
@@ -176,6 +172,10 @@ public class HandTracking : MonoBehaviour
                     rockFinish = true;
                     rockTime = 0.0f;
                 }
+                break;
+            default:
+                isHandRock = false;
+                rockTime = 0.0f;
                 break;
         }
 
