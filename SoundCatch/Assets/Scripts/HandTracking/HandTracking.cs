@@ -66,15 +66,16 @@ public class HandTracking : MonoBehaviour
                 float z = float.Parse(points[29]) / 100;
 
                 // 손 모양 가져오기
-                float handG = 0.0f; // 임시. 후에 data에서 받아올 예정
+                float handG = float.Parse(points[63]);
                 HandGesture handGesture = (HandGesture)((int)handG);
 
                 Vector3 handCenter = new Vector3(x, y, z);
 
-                Debug.DrawRay(handCenter, Vector3.forward * -1, Color.red, 300.0f); // 임시 레이어 표시
+                Debug.DrawRay(handCenter, Vector3.forward * -1, Color.blue, 300.0f); // 임시 레이어 표시
 
                 if (Physics.Raycast(handCenter, Vector3.forward * -1, out hit, 300.0f, bLayer | uLayer | gLayer)) 
                 {
+                    Debug.Log(hit.collider.name);
 
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
