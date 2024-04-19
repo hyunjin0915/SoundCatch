@@ -11,10 +11,10 @@ public class mainMenuTest : MonoBehaviour
 
     public void ClickButton1()//게임시작선택
     {
-        //게임시작씬로드
+        SceneLoader.Instance.ChangeScene("SelectGame");
     }
     public void ClickButton2()//게임시작선택
     {
-        //게임종료씬로드
+        SceneLoader.Instance.ChangeScene("GameExit");
     }
 }
