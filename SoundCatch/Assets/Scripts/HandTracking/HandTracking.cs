@@ -75,13 +75,13 @@ public class HandTracking : MonoBehaviour
 
                 if (Physics.Raycast(handCenter, Vector3.forward * -1, out hit, 300.0f, bLayer | uLayer | gLayer)) 
                 {
-                    Debug.Log(hit.collider.name);
+                    //Debug.Log(hit.collider.name);
 
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
                         // 소리 출력
                         PlaySound(3.0f);
-
+                        
                         // UI 3초 주먹 인식
                         if (CognizeHandGesture(handGesture, 3.0f))
                         {
