@@ -15,7 +15,7 @@ public enum MainGame
 
 public class HandTracking : MonoBehaviour
 {
-    public MainGame mainGame;
+    public MainGame mainGame = MainGame.causeSound;
 
     // event
     public UIFunctionEvent uiFunEvent;
@@ -71,9 +71,9 @@ public class HandTracking : MonoBehaviour
 
                 Vector3 handCenter = new Vector3(x, y, z);
 
-                Debug.DrawRay(handCenter, Vector3.forward * -1, Color.blue, 300.0f); // 임시 레이어 표시
+                Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // 임시 레이어 표시
 
-                if (Physics.Raycast(handCenter, Vector3.forward * -1, out hit, 300.0f, bLayer | uLayer | gLayer)) 
+                if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer)) 
                 {
                     //Debug.Log(hit.collider.name);
 
@@ -131,8 +131,8 @@ public class HandTracking : MonoBehaviour
                             case MainGame.causeSound: // 소리원 찾기의 게임 오브젝트 인식 부분
 
                                 // 소리 출력
-                                // 인식한 오브젝트가 소리를 계속 반복해서 출력하면 PlayLoopSound()
-                                // 인식한 오브젝트가 소리를 몇 초간 간격을 가지고 반복해서 출력하면 PlaySound(간격 초)
+                                PlayLoopSound();
+                                gameObjectFunEvent.SSRaise(sound.objectNum, handCenter);
 
                                 // 게임 오브젝트 주먹 인식
                                 if (CognizeHandGesture(handGesture, 3.0f)) // 매개변수 3.0f 수정해서 원하는 초 만큼 주먹을 쥐어야 함수 실행 가능
@@ -197,7 +197,7 @@ public class HandTracking : MonoBehaviour
             audioSource.Play();
 
             rockTime = 0.0f;
-        }
+        } 
     }
 
     // 소리 출력(UI와 같이 간격을 주고 반복해서 들려주는 오디오)
