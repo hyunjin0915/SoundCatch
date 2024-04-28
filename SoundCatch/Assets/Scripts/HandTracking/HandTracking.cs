@@ -132,7 +132,7 @@ public class HandTracking : MonoBehaviour
 
                                 // 소리 출력
                                 PlayLoopSound();
-                                gameObjectFunEvent.SSRaise(sound.objectNum, handCenter);
+                                gameObjectFunEvent.SSRaise(handCenter);
 
                                 // 게임 오브젝트 주먹 인식
                                 if (CognizeHandGesture(handGesture, 3.0f)) // 매개변수 3.0f 수정해서 원하는 초 만큼 주먹을 쥐어야 함수 실행 가능

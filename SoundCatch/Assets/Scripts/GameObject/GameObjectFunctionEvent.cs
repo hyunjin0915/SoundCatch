@@ -21,8 +21,8 @@ public class GameObjectFunctionEvent : ScriptableObject
     }
 
     // 소리원 찾기 게임에서 필요해서 추가
-    public void SSRaise(int objectIndex, Vector3 handPos)
+    public void SSRaise(Vector3 handPos)
     {
-        listener.OnSSEventRaised(objectIndex, handPos);
+        listener.OnSSEventRaised(handPos);
     }
 }

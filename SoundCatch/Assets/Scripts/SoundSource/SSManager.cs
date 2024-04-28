@@ -4,42 +4,79 @@ using UnityEngine;
 
 public class SSManager : MonoBehaviour
 {
-    public GameObject soundSource;
     public AudioSource audioSource;
-    private Vector3 ssPos;
-    public GameObject[] obstacles;
+    public AudioSource subAudioSource;
+
+    //-----------------------------
+    
+    public GameObject a;
+    public GameObject b;
+    public GameObject c;
+
+    public Vector2 ssPos;
+    public Vector2 snPos;
+    public Vector2 sdPos;
+
+    //----------------------------------
+
+    public bool[] arrBool = new bool[4] { false, false, false, false};
 
     private float maxSize = 10.3f;
 
-    private Vector2 handPos;
+    public Vector2 handPos;
+
+    public AudioClip noise;
+
+    private bool inSN = false;
 
     void Start()
     {
         audioSource = GameObject.FindGameObjectWithTag("HTManager").GetComponent<AudioSource>();
-        ssPos = new Vector3(Random.Range(-4.5f, 5.2f), Random.Range(1.0f, 5.6f), 2.5f);
-        soundSource.transform.localPosition = ssPos;
+        subAudioSource = audioSource.GetComponentsInChildren<AudioSource>()[1];
+        subAudioSource.clip = noise;
+        int index = Random.Range(0, 4);
+        ssPos = SetPos(index);
+
+        snPos = SetObstacle();
+        sdPos = SetObstacle();
+
+        //------------------------------
+        a.transform.position = ssPos;
+        b.transform.position = snPos;
+        c.transform.position = sdPos;
+        //--------------------------------
     }
 
-    public void CheckSound(int objectNum, Vector3 handPos)
+    public void CheckSound(Vector3 handPos)
     {
-        switch (objectNum)
+        this.handPos = new Vector2(handPos.x, handPos.y);
+
+        switch (CheckPosArea())
         {
             case 0:
+                subAudioSource.Stop();
                 audioSource.volume = CalDis(handPos);
+                inSN = false;
                 break;
-            case 1:
-                audioSource.volume = 0.1f;
+            case 1: // 노이즈
+                if (!inSN)
+                {
+                    subAudioSource.Play();
+                }
+                inSN = true;
                 break;
-            case 2:
-                break;
-            case 3:
+            case 2: // 볼륨 줄이기
+                subAudioSource.Stop();
+                float vol = audioSource.volume >= 0.04 ? audioSource.volume - 0.03f : 0.01f;
+                audioSource.volume = vol;
+                inSN = false;
                 break;
         }
     }
 
     public void CheckAnswer(int objectNum)
     {
-        if (objectNum == 1)
+        if (handPos.x >= ssPos.x - 0.4f && handPos.x <= ssPos.x + 0.4f && handPos.y >= ssPos.y - 0.4f && handPos.y <= ssPos.y + 0.4f)
         {
             Debug.Log("Clear"); // 임의 작성
         }
@@ -47,19 +84,64 @@ public class SSManager : MonoBehaviour
 
     private float CalDis(Vector3 handPos)
     {
-        this.handPos = new Vector2(handPos.x, handPos.y);
         float dis = Vector2.Distance(this.handPos, ssPos) - 0.4f;
 
         if (dis > maxSize)
         {
             return 0.01f;
         }
-        else if (dis > 0.03f)
+        else if (dis > 0.4f)
         {
             return 0.09f * (1f - Mathf.Clamp01(dis / maxSize));
         } else
         {
             return 0.1f;
         }
+    }
+
+    private int CheckPosArea()
+    {
+        if (handPos.x >= snPos.x - 0.4f && handPos.x <= snPos.x + 0.4f && handPos.y >= snPos.y - 0.4f && handPos.y <= snPos.y + 0.4f) // 장애물 구역(노이즈)
+        {
+            return 1;
+        } else if(handPos.x >= sdPos.x - 0.4f && handPos.x <= sdPos.x + 0.4f && handPos.y >= sdPos.y - 0.4f && handPos.y <= sdPos.y + 0.4f) // 장애물 구역(소리 감소)
+        {
+            return 2;
+        } else // 일반 구역
+        {
+            return 0;
+        }
+    }
+
+    private Vector2 SetPos(int i)
+    {
+        arrBool[i] = true;
+        switch (i)
+        {
+            case 0:
+                return new Vector2(Random.Range(-4.2f, -0.1f), Random.Range(3.7f, 5.3f));
+                break;
+            case 1:
+                return new Vector2(Random.Range(0.7f, 5.0f), Random.Range(3.7f, 5.3f));
+                break;
+            case 2:
+                return new Vector2(Random.Range(-4.2f, -0.1f), Random.Range(1.3f, 2.8f));
+                break;
+            default:
+                return new Vector2(Random.Range(0.7f, 5.0f), Random.Range(1.3f, 2.8f));
+                break;
+
+        }
+    }
+
+    private Vector2 SetObstacle()
+    {
+        int i;
+        do
+        {
+            i = Random.Range(0, 4);
+        } while (arrBool[i]);
+
+        return SetPos(i);
     }
 }
