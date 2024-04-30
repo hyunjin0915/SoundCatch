@@ -317,6 +317,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1715302731731253607, guid: 5326a62f08f80bc48ba766b3752d5c36, type: 3}
+      propertyPath: m_Name
+      value: SoundSourceBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130503444668551236, guid: 5326a62f08f80bc48ba766b3752d5c36, type: 3}
+      propertyPath: m_Name
+      value: HiddenSoundBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301971088322813211, guid: 5326a62f08f80bc48ba766b3752d5c36, type: 3}
+      propertyPath: m_Name
+      value: TuningSoundBox
+      objectReference: {fileID: 0}
     - target: {fileID: 5562641339065267609, guid: 5326a62f08f80bc48ba766b3752d5c36, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -388,7 +400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1213754112284870135, guid: 7c2b01e30c0a21f498476689b2dc4177, type: 3}
       propertyPath: m_text
-      value: "\uC228\uC740 \uC18C\uB9AC \uCC3E\uAE30"
+      value: "\uC228\uC740 \uC18C\uB9AC \n\uCC3E\uAE30"
       objectReference: {fileID: 0}
     - target: {fileID: 1468737682007847969, guid: 7c2b01e30c0a21f498476689b2dc4177, type: 3}
       propertyPath: m_Name

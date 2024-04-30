@@ -110,6 +110,7 @@ public class HandTracking : MonoBehaviour
                                 // 소리 출력
                                 // 인식한 오브젝트가 소리를 계속 반복해서 출력하면 PlayLoopSound()
                                 // 인식한 오브젝트가 소리를 몇 초간 간격을 가지고 반복해서 출력하면 PlaySound(간격 초)
+                                PlayLoopSound();
 
                                 // 게임 오브젝트 주먹 인식
                                 if (CognizeHandGesture(handGesture, 3.0f)) // 매개변수 3.0f 수정해서 원하는 초 만큼 주먹을 쥐어야 함수 실행 가능
