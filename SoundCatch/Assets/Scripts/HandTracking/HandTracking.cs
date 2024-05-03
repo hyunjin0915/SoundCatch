@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 enum HandGesture
@@ -27,6 +28,10 @@ public class HandTracking : MonoBehaviour
     private RaycastHit hit;
     private RaycastHit preHit;
     private bool isHandRock = false; // 손 모양이 주먹인가
+    // 손 인식 중심 좌표
+    private float x;
+    private float y;
+    private float z;
     // 인식 타이머
     private float rockTime = 0.0f;
 
@@ -61,9 +66,9 @@ public class HandTracking : MonoBehaviour
                 string[] points = data.Split(',');
 
                 // 인식 좌표의 중간 좌표 가져오기(레이 발사할 부분만 가져오기)
-                float x = 7 - float.Parse(points[27]) / 100;
-                float y = float.Parse(points[28]) / 100;
-                float z = float.Parse(points[29]) / 100;
+                x = 7 - float.Parse(points[27]) / 100;
+                y = float.Parse(points[28]) / 100;
+                z = float.Parse(points[29]) / 100;
 
                 // 손 모양 가져오기
                 float handG = float.Parse(points[63]);
@@ -234,5 +239,18 @@ public class HandTracking : MonoBehaviour
     public void SetCurScene(MainGame gameName)
     {
         mainGame = gameName;
+    }
+
+    // 현재 손 정보 리턴
+    public Vector3 getHandInfo()
+    {
+        Vector3 pos = new Vector3(x, y, z);
+
+        return pos;
+    }
+    // 현재 손 모양 리턴
+    public bool getGestureInfo()
+    {
+        return isHandRock;  
     }
 }
