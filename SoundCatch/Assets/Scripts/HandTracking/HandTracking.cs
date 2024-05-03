@@ -7,16 +7,16 @@ enum HandGesture
     rock // 주먹
 }
 
-public enum MainGame
+/*public enum MainGame
 {
     hiddenSound, // 숨은 소리 찾기
     setSound, // 음 맞추기
     causeSound // 소리원 찾기
 }
-
+*/
 public class HandTracking : MonoBehaviour
 {
-    public MainGame mainGame = MainGame.causeSound;
+    //public MainGame mainGame = MainGame.causeSound;
 
     // event
     public UIFunctionEvent uiFunEvent;
@@ -103,7 +103,7 @@ public class HandTracking : MonoBehaviour
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GameObject")) // 인식한 오브젝트가 GameObject인 경우
                     {
                         // 게임 구분
-                        switch (mainGame)
+                        switch (SceneLoader.Instance.mainGame)
                         {
                             case MainGame.hiddenSound: // 숨은 소리 찾기의 게임 오브젝트 인식 부분
 
@@ -237,11 +237,11 @@ public class HandTracking : MonoBehaviour
     }
 
     // 현재 게임 설정
-    public void SetCurScene(MainGame gameName)
+    /*public void SetCurScene(MainGame gameName)
     {
         mainGame = gameName;
     }
-
+*/
     // 현재 손 정보 리턴
     public Vector3 getHandInfo()
     {
