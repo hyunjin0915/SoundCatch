@@ -22,6 +22,7 @@ public class SSManager : MonoBehaviour
     public bool[] arrBool = new bool[4] { false, false, false, false};
 
     private float maxSize = 10.3f;
+    public float maxVolume = 0.8f;
 
     public Vector2 handPos;
 
@@ -92,19 +93,20 @@ public class SSManager : MonoBehaviour
         }
         else if (dis > 0.4f)
         {
-            return 0.09f * (1f - Mathf.Clamp01(dis / maxSize));
-        } else
+            return (maxVolume - 0.3f) * (1f - Mathf.Clamp01(dis / maxSize));
+        }
+        else
         {
-            return 0.1f;
+            return maxVolume;
         }
     }
 
     private int CheckPosArea()
     {
-        if (handPos.x >= snPos.x - 0.4f && handPos.x <= snPos.x + 0.4f && handPos.y >= snPos.y - 0.4f && handPos.y <= snPos.y + 0.4f) // 厘局拱 备开(畴捞令)
+        if (handPos.x >= snPos.x - 0.2f && handPos.x <= snPos.x + 0.2f && handPos.y >= snPos.y - 0.2f && handPos.y <= snPos.y + 0.2f) // 厘局拱 备开(畴捞令)
         {
             return 1;
-        } else if(handPos.x >= sdPos.x - 0.4f && handPos.x <= sdPos.x + 0.4f && handPos.y >= sdPos.y - 0.4f && handPos.y <= sdPos.y + 0.4f) // 厘局拱 备开(家府 皑家)
+        } else if(handPos.x >= sdPos.x - 0.2f && handPos.x <= sdPos.x + 0.2f && handPos.y >= sdPos.y - 0.2f && handPos.y <= sdPos.y + 0.2f) // 厘局拱 备开(家府 皑家)
         {
             return 2;
         } else // 老馆 备开

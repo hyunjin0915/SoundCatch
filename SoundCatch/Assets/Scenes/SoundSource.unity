@@ -476,7 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcf12658d4a1b743a2171a7fb3a2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainGame: 2
   uiFunEvent: {fileID: 11400000, guid: 8c9622bcb6f532d4c81a72adc26e9ba2, type: 2}
   gameObjectFunEvent: {fileID: 11400000, guid: e6ec1c11c5c08ee4fbaf5647d075b026, type: 2}
   audioSource: {fileID: 529784942}
@@ -853,6 +852,7 @@ MonoBehaviour:
   snPos: {x: 0, y: 0}
   sdPos: {x: 0, y: 0}
   arrBool: 00000000
+  maxVolume: 0.8
   handPos: {x: 0, y: 0}
   noise: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
 --- !u!114 &859455651
