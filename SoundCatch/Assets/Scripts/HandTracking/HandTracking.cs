@@ -199,7 +199,7 @@ public class HandTracking : MonoBehaviour
             audioSource.Stop();
             audioSource.loop = true;
             audioSource.clip = sound.cubeSound;
-            audioSource.volume = 0.1f;
+            audioSource.volume = 0.8f;
             audioSource.Play();
 
             rockTime = 0.0f;
@@ -215,7 +215,7 @@ public class HandTracking : MonoBehaviour
             sound = hit.collider.GetComponent<Sound>();
 
             audioSource.Stop();
-            audioSource.volume = 0.1f;
+            audioSource.volume = 0.8f;
             audioSource.PlayOneShot(sound.cubeSound);
             audioSource.clip = sound.cubeSound;
 
