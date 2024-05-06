@@ -102,6 +102,7 @@ public class HandTracking : MonoBehaviour
                     }
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GameObject")) // 인식한 오브젝트가 GameObject인 경우
                     {
+
                         // 게임 구분
                         switch (SceneLoader.Instance.mainGame)
                         {
