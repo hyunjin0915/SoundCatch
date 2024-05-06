@@ -152,8 +152,8 @@ Transform:
   m_GameObject: {fileID: 140259293}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 1, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: -2.5, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156950004}
@@ -170,10 +170,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 5
-  cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  objectNum: 4
+  cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
-  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  subSound: {fileID: 0}
 --- !u!65 &140259296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -382,8 +382,8 @@ Transform:
   m_GameObject: {fileID: 469323058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156950004}
@@ -400,10 +400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 4
-  cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  objectNum: 3
+  cubeSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
   isSub: 0
-  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  subSound: {fileID: 0}
 --- !u!1 &624257594
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,8 +433,8 @@ Transform:
   m_GameObject: {fileID: 624257594}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: -2.5, y: 0, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156950004}
@@ -451,10 +451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 6
-  cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  objectNum: 5
+  cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
-  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  subSound: {fileID: 0}
 --- !u!65 &624257597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -555,8 +555,8 @@ Transform:
   m_GameObject: {fileID: 722681804}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156950004}
@@ -573,10 +573,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 3
-  cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  objectNum: 2
+  cubeSound: {fileID: 8300000, guid: b594b70df606b224aa97847ad23479f4, type: 3}
   isSub: 0
-  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  subSound: {fileID: 0}
 --- !u!65 &722681807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -863,8 +863,8 @@ Transform:
   m_GameObject: {fileID: 1962531352}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: 2.5, y: 0, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156950004}
@@ -881,10 +881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 2
-  cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  objectNum: 1
+  cubeSound: {fileID: 8300000, guid: 7a67f942e888aac4689a2e4036f2e5d9, type: 3}
   isSub: 0
-  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  subSound: {fileID: 0}
 --- !u!65 &1962531355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -985,8 +985,8 @@ Transform:
   m_GameObject: {fileID: 2048072199}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 1, z: 0}
-  m_LocalScale: {x: 2.5, y: 1, z: 1}
+  m_LocalPosition: {x: 2.5, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 156950004}
@@ -1003,10 +1003,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 1
+  objectNum: 0
   cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
-  isSub: 0
-  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  isSub: 1
+  subSound: {fileID: 8300000, guid: 1976c43ca07700f4fa9660d1b774445d, type: 3}
 --- !u!65 &2048072202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1093,104 +1093,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2015532079737364688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3674855342735148640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 951fb0c14fb283443b01717422f873fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: 8c9622bcb6f532d4c81a72adc26e9ba2, type: 2}
-  ResponseList:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock3
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock4
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock5
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock6
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &3674855342735148640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,7 +1103,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1405626664243844472}
   - component: {fileID: 3674855342735148641}
-  - component: {fileID: 2015532079737364688}
+  - component: {fileID: 3674855342735148642}
   m_Layer: 0
   m_Name: PlayManager
   m_TagString: Untagged
@@ -1221,6 +1123,97 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e7a8f29a8160343a4e185ceca9eb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3674855342735148642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3674855342735148640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f198fc3dfcbcbe64aa816a3e4ad4b693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e6ec1c11c5c08ee4fbaf5647d075b026, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock6
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ssResponse:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
