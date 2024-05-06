@@ -39,6 +39,8 @@ public class HandTracking : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource subAscr;
     private Sound sound;
+    private Sound subsound;
+
     // 사운드 타이머
     private float soundTimer = 0.0f;
 
@@ -189,14 +191,28 @@ public class HandTracking : MonoBehaviour
 
         return rockFinish;
     }
-
+    
     // 소리 출력(GameObject, Background와 같이 계속 반복해서 들려주는 오디오)
     private void PlayLoopSound()
     {
         if (!audioSource.isPlaying || hit.collider.gameObject != preHit.collider.gameObject)
         {
             sound = hit.collider.GetComponent<Sound>();
-
+            subAscr.Stop();
+            if(sound.isSub)
+            {
+                subAscr.loop = true;
+                subAscr.panStereo = -1;
+                audioSource.panStereo = 1;
+                subAscr.clip = sound.subSound;
+                subAscr.volume = 0.8f;
+                subAscr.Play();
+            }
+            else
+            {
+                audioSource.panStereo = 0;
+                subAscr.panStereo = 0;
+            }
             audioSource.Stop();
             audioSource.loop = true;
             audioSource.clip = sound.cubeSound;
