@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading;
 
-public class UDPReceive : MonoBehaviour
+public class UDPReceive : Singleton<UDPReceive>
 {
     public bool startRecieving = true;
     public bool printToConsole = false;
