@@ -7,17 +7,9 @@ enum HandGesture
     rock // 주먹
 }
 
-/*public enum MainGame
-{
-    hiddenSound, // 숨은 소리 찾기
-    setSound, // 음 맞추기
-    causeSound // 소리원 찾기
-}
-*/
+
 public class HandTracking : MonoBehaviour
 {
-    //public MainGame mainGame = MainGame.causeSound;
-
     // event
     public UIFunctionEvent uiFunEvent;
     public GameObjectFunctionEvent gameObjectFunEvent;
@@ -26,7 +18,7 @@ public class HandTracking : MonoBehaviour
 
     // 인식
     private RaycastHit hit;
-    private RaycastHit preHit;
+    public GameObject preHit;
     private bool isHandRock = false; // 손 모양이 주먹인가
     // 손 인식 중심 좌표
     private float x;
@@ -80,8 +72,6 @@ public class HandTracking : MonoBehaviour
 
                 if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer)) 
                 {
-                    //Debug.Log(hit.collider.name);
-
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
                         // 소리 출력
@@ -152,7 +142,7 @@ public class HandTracking : MonoBehaviour
                         }
                     }
 
-                    preHit = hit;
+                    preHit = hit.transform.gameObject;
                 }
             }
             else // 인식 데이터가 true일 경우 => 파이썬 파일이 실행되었을 때의 타이밍을 위한 조건
@@ -193,7 +183,7 @@ public class HandTracking : MonoBehaviour
     // 소리 출력(GameObject, Background와 같이 계속 반복해서 들려주는 오디오)
     private void PlayLoopSound()
     {
-        if (!audioSource.isPlaying || hit.collider.gameObject != preHit.collider.gameObject)
+        if (preHit == null || hit.collider.gameObject != preHit)
         {
             sound = hit.collider.GetComponent<Sound>();
 
@@ -211,7 +201,7 @@ public class HandTracking : MonoBehaviour
     private void PlaySound(float timer) // 매개변수 : 들려주는 간격을 몇 초로 줄 것인지.
     {
 
-        if (audioSource.clip == null || hit.collider.gameObject != preHit.collider.gameObject)
+        if (preHit == null || hit.collider.gameObject != preHit)
         {
             sound = hit.collider.GetComponent<Sound>();
 
