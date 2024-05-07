@@ -109,7 +109,7 @@ public class HandTracking : MonoBehaviour
                                 if (CognizeHandGesture(handGesture, 3.0f)) // 매개변수 3.0f 수정해서 원하는 초 만큼 주먹을 쥐어야 함수 실행 가능
                                 {
                                     // 게임 오브젝트의 경우 해당 오브젝트가 선택되었을 때
-                                    gameObjectFunEvent.Raise(sound.objectNum);
+                                    uiFunEvent.Raise(sound.objectNum);
                                 }
 
                                 break;
