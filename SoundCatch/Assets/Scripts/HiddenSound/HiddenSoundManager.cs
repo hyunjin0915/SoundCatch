@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class HiddenSoundManager : MonoBehaviour
 {
-    public void ClickBlock1() //정답 블록
+    public void ClickBlock0() //정답 블록
     {
         Debug.Log("정답입니다");
+    }
+     public void ClickBlock1()
+    {
+        Debug.Log("오답입니다");
     }
      public void ClickBlock2()
     {
@@ -21,10 +25,6 @@ public class HiddenSoundManager : MonoBehaviour
         Debug.Log("오답입니다");
     }
      public void ClickBlock5()
-    {
-        Debug.Log("오답입니다");
-    }
-     public void ClickBlock6()
     {
         Debug.Log("오답입니다");
     }

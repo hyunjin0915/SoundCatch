@@ -1132,12 +1132,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 3674855342735148640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f198fc3dfcbcbe64aa816a3e4ad4b693, type: 3}
+  m_Script: {fileID: 11500000, guid: 951fb0c14fb283443b01717422f873fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: e6ec1c11c5c08ee4fbaf5647d075b026, type: 2}
-  Response:
-    m_PersistentCalls:
+  Event: {fileID: 11400000, guid: 8c9622bcb6f532d4c81a72adc26e9ba2, type: 2}
+  ResponseList:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3674855342735148641}
+        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
+        m_MethodName: ClickBlock0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3674855342735148641}
         m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
@@ -1151,6 +1165,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3674855342735148641}
         m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
         m_MethodName: ClickBlock2
@@ -1163,6 +1179,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3674855342735148641}
         m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
         m_MethodName: ClickBlock3
@@ -1175,6 +1193,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3674855342735148641}
         m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
         m_MethodName: ClickBlock4
@@ -1187,6 +1207,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3674855342735148641}
         m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
         m_MethodName: ClickBlock5
@@ -1199,21 +1221,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3674855342735148641}
-        m_TargetAssemblyTypeName: HiddenSoundManager, Assembly-CSharp
-        m_MethodName: ClickBlock6
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  ssResponse:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
