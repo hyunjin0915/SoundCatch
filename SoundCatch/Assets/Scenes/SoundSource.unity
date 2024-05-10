@@ -478,6 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiFunEvent: {fileID: 11400000, guid: 8c9622bcb6f532d4c81a72adc26e9ba2, type: 2}
   gameObjectFunEvent: {fileID: 11400000, guid: e6ec1c11c5c08ee4fbaf5647d075b026, type: 2}
+  preHit: {fileID: 0}
   audioSource: {fileID: 529784942}
   subAscr: {fileID: 1765566155}
 --- !u!82 &529784942
@@ -1224,7 +1225,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1724857695
 AudioListener:
   m_ObjectHideFlags: 0

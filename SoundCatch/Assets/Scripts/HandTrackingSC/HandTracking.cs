@@ -4,7 +4,9 @@ using UnityEngine;
 enum HandGesture
 {
     paper, // ╪у╧ы╢з
-    rock // аж╦т
+    rock, // аж╦т
+    scissors, // ╟║ю╖
+    nothing
 }
 
 
