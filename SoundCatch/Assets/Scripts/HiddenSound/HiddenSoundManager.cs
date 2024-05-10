@@ -4,28 +4,17 @@ using UnityEngine;
 
 public class HiddenSoundManager : MonoBehaviour
 {
-    public void ClickBlock0() //정답 블록
+    public void ClickRightBlock() //정답 블록
     {
         Debug.Log("정답입니다");
     }
-     public void ClickBlock1()
+     public void WrongBlock()
     {
         Debug.Log("오답입니다");
     }
-     public void ClickBlock2()
+     public void ClickBackGround()
     {
-        Debug.Log("오답입니다");
+        Debug.Log("배경입니다");
     }
-     public void ClickBlock3()
-    {
-        Debug.Log("오답입니다");
-    }
-     public void ClickBlock4()
-    {
-        Debug.Log("오답입니다");
-    }
-     public void ClickBlock5()
-    {
-        Debug.Log("오답입니다");
-    }
+   
 }
