@@ -3,8 +3,10 @@ using UnityEngine;
 
 enum HandGesture
 {
-    paper, // ¼Õ¹Ù´Ú
-    rock // ÁÖ¸Ô
+    paper, // ì†ë°”ë‹¥
+    rock, // ì£¼ë¨¹
+    scissors, // ê°€ìœ„
+    nothing
 }
 
 
@@ -14,32 +16,32 @@ public class HandTracking : MonoBehaviour
     public UIFunctionEvent uiFunEvent;
     public GameObjectFunctionEvent gameObjectFunEvent;
 
-    private bool isCameraOn = false; // ÆÄÀÌ½ã ÆÄÀÏÀÌ ½ÇÇàµÇ¾ú´ÂÁö
+    private bool isCameraOn = false; // íŒŒì´ì¬ íŒŒì¼ì´ ì‹¤í–‰ë˜ì—ˆëŠ”ì§€
 
-    // ÀÎ½Ä
+    // ì¸ì‹
     private RaycastHit hit;
     public GameObject preHit;
-    private bool isHandRock = false; // ¼Õ ¸ğ¾çÀÌ ÁÖ¸ÔÀÎ°¡
-    // ¼Õ ÀÎ½Ä Áß½É ÁÂÇ¥
+    private bool isHandRock = false; // ì† ëª¨ì–‘ì´ ì£¼ë¨¹ì¸ê°€
+    // ì† ì¸ì‹ ì¤‘ì‹¬ ì¢Œí‘œ
     private float x;
     private float y;
     private float z;
-    // ÀÎ½Ä Å¸ÀÌ¸Ó
+    // ì¸ì‹ íƒ€ì´ë¨¸
     private float rockTime = 0.0f;
 
-    // ¿Àµğ¿À
+    // ì˜¤ë””ì˜¤
     public AudioSource audioSource;
     public AudioSource subAscr;
     private Sound sound;
     private Sound subsound;
 
-    // »ç¿îµå Å¸ÀÌ¸Ó
+    // ì‚¬ìš´ë“œ íƒ€ì´ë¨¸
     private float soundTimer = 0.0f;
 
     // layer
-    private int bLayer = 1 << 3; // ·¹ÀÌ¾î 3 : Background(°æ°è)
-    private int uLayer = 1 << 5; // ·¹ÀÌ¾î 5 : UI
-    private int gLayer = 1 << 6; // ·¹ÀÌ¾î 6 : GameObject
+    private int bLayer = 1 << 3; // ë ˆì´ì–´ 3 : Background(ê²½ê³„)
+    private int uLayer = 1 << 5; // ë ˆì´ì–´ 5 : UI
+    private int gLayer = 1 << 6; // ë ˆì´ì–´ 6 : GameObject
 
     void Start()
     {
@@ -48,95 +50,95 @@ public class HandTracking : MonoBehaviour
 
     void Update()
     {
-        string data = UDPReceive.instance.data; // ÀÎ½Ä µ¥ÀÌÅÍ ¹Ş±â
+        string data = UDPReceive.instance.data; // ì¸ì‹ ë°ì´í„° ë°›ê¸°
 
         if (data != "")
         {
-            if (!data.Equals("true")) // ÀÎ½Ä µ¥ÀÌÅÍ°¡ ÁÂÇ¥ÀÏ °æ¿ì
+            if (!data.Equals("true")) // ì¸ì‹ ë°ì´í„°ê°€ ì¢Œí‘œì¼ ê²½ìš°
             {
-                // ÀÎ½Ä µ¥ÀÌÅÍ ÀüÃ³¸®
+                // ì¸ì‹ ë°ì´í„° ì „ì²˜ë¦¬
                 data = data.Remove(0, 1);
                 data = data.Remove(data.Length - 1, 1);
                 string[] points = data.Split(',');
 
-                // ÀÎ½Ä ÁÂÇ¥ÀÇ Áß°£ ÁÂÇ¥ °¡Á®¿À±â(·¹ÀÌ ¹ß»çÇÒ ºÎºĞ¸¸ °¡Á®¿À±â)
+                // ì¸ì‹ ì¢Œí‘œì˜ ì¤‘ê°„ ì¢Œí‘œ ê°€ì ¸ì˜¤ê¸°(ë ˆì´ ë°œì‚¬í•  ë¶€ë¶„ë§Œ ê°€ì ¸ì˜¤ê¸°)
                 x = 7 - float.Parse(points[27]) / 100;
                 y = float.Parse(points[28]) / 100;
                 z = float.Parse(points[29]) / 100;
 
-                // ¼Õ ¸ğ¾ç °¡Á®¿À±â
+                // ì† ëª¨ì–‘ ê°€ì ¸ì˜¤ê¸°
                 float handG = float.Parse(points[63]);
                 HandGesture handGesture = (HandGesture)((int)handG);
 
                 Vector3 handCenter = new Vector3(x, y, z);
 
-                Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // ÀÓ½Ã ·¹ÀÌ¾î Ç¥½Ã
+                Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // ì„ì‹œ ë ˆì´ì–´ í‘œì‹œ
 
                 if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer)) 
                 {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ UIÀÎ °æ¿ì
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ UIì¸ ê²½ìš°
                     {
-                        // ¼Ò¸® Ãâ·Â
+                        // ì†Œë¦¬ ì¶œë ¥
                         PlaySound(3.0f);
                         
-                        // UI 3ÃÊ ÁÖ¸Ô ÀÎ½Ä
+                        // UI 3ì´ˆ ì£¼ë¨¹ ì¸ì‹
                         if (CognizeHandGesture(handGesture, 3.0f))
                         {
-                            // UI ¿ÀºêÁ§Æ®ÀÇ °æ¿ì ÇØ´ç ¿ÀºêÁ§Æ®°¡ ¼±ÅÃµÇ¾úÀ» ¶§
+                            // UI ì˜¤ë¸Œì íŠ¸ì˜ ê²½ìš° í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ ì„ íƒë˜ì—ˆì„ ë•Œ
                             uiFunEvent.Raise(sound.objectNum);
                         }
                     }
-                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Background")) // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ BackgroundÀÎ °æ¿ì
+                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Background")) // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ Backgroundì¸ ê²½ìš°
                     {
-                        // ¼Ò¸® Ãâ·Â
+                        // ì†Œë¦¬ ì¶œë ¥
                         PlayLoopSound();
 
                     }
-                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GameObject")) // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ GameObjectÀÎ °æ¿ì
+                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GameObject")) // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ GameObjectì¸ ê²½ìš°
                     {
 
-                        // °ÔÀÓ ±¸ºĞ
+                        // ê²Œì„ êµ¬ë¶„
                         switch (SceneLoader.Instance.mainGame)
                         {
-                            case MainGame.hiddenSound: // ¼ûÀº ¼Ò¸® Ã£±âÀÇ °ÔÀÓ ¿ÀºêÁ§Æ® ÀÎ½Ä ºÎºĞ
+                            case MainGame.hiddenSound: // ìˆ¨ì€ ì†Œë¦¬ ì°¾ê¸°ì˜ ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì¸ì‹ ë¶€ë¶„
 
-                                // ¼Ò¸® Ãâ·Â
-                                // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ ¼Ò¸®¸¦ °è¼Ó ¹İº¹ÇØ¼­ Ãâ·ÂÇÏ¸é PlayLoopSound()
-                                // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ ¼Ò¸®¸¦ ¸î ÃÊ°£ °£°İÀ» °¡Áö°í ¹İº¹ÇØ¼­ Ãâ·ÂÇÏ¸é PlaySound(°£°İ ÃÊ)
+                                // ì†Œë¦¬ ì¶œë ¥
+                                // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ ì†Œë¦¬ë¥¼ ê³„ì† ë°˜ë³µí•´ì„œ ì¶œë ¥í•˜ë©´ PlayLoopSound()
+                                // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ ì†Œë¦¬ë¥¼ ëª‡ ì´ˆê°„ ê°„ê²©ì„ ê°€ì§€ê³  ë°˜ë³µí•´ì„œ ì¶œë ¥í•˜ë©´ PlaySound(ê°„ê²© ì´ˆ)
                                 PlayLoopSound();
 
-                                // °ÔÀÓ ¿ÀºêÁ§Æ® ÁÖ¸Ô ÀÎ½Ä
-                                if (CognizeHandGesture(handGesture, 3.0f)) // ¸Å°³º¯¼ö 3.0f ¼öÁ¤ÇØ¼­ ¿øÇÏ´Â ÃÊ ¸¸Å­ ÁÖ¸ÔÀ» Áã¾î¾ß ÇÔ¼ö ½ÇÇà °¡´É
+                                // ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì£¼ë¨¹ ì¸ì‹
+                                if (CognizeHandGesture(handGesture, 3.0f)) // ë§¤ê°œë³€ìˆ˜ 3.0f ìˆ˜ì •í•´ì„œ ì›í•˜ëŠ” ì´ˆ ë§Œí¼ ì£¼ë¨¹ì„ ì¥ì–´ì•¼ í•¨ìˆ˜ ì‹¤í–‰ ê°€ëŠ¥
                                 {
-                                    // °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ °æ¿ì ÇØ´ç ¿ÀºêÁ§Æ®°¡ ¼±ÅÃµÇ¾úÀ» ¶§
+                                    // ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ê²½ìš° í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ ì„ íƒë˜ì—ˆì„ ë•Œ
                                     uiFunEvent.Raise(sound.objectNum);
                                 }
 
                                 break;
-                            case MainGame.setSound: // À½ ¸ÂÃß±âÀÇ °ÔÀÓ ¿ÀºêÁ§Æ® ÀÎ½Ä ºÎºĞ
+                            case MainGame.setSound: // ìŒ ë§ì¶”ê¸°ì˜ ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì¸ì‹ ë¶€ë¶„
 
-                                // ¼Ò¸® Ãâ·Â
-                                // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ ¼Ò¸®¸¦ °è¼Ó ¹İº¹ÇØ¼­ Ãâ·ÂÇÏ¸é PlayLoopSound()
-                                // ÀÎ½ÄÇÑ ¿ÀºêÁ§Æ®°¡ ¼Ò¸®¸¦ ¸î ÃÊ°£ °£°İÀ» °¡Áö°í ¹İº¹ÇØ¼­ Ãâ·ÂÇÏ¸é PlaySound(°£°İ ÃÊ)
+                                // ì†Œë¦¬ ì¶œë ¥
+                                // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ ì†Œë¦¬ë¥¼ ê³„ì† ë°˜ë³µí•´ì„œ ì¶œë ¥í•˜ë©´ PlayLoopSound()
+                                // ì¸ì‹í•œ ì˜¤ë¸Œì íŠ¸ê°€ ì†Œë¦¬ë¥¼ ëª‡ ì´ˆê°„ ê°„ê²©ì„ ê°€ì§€ê³  ë°˜ë³µí•´ì„œ ì¶œë ¥í•˜ë©´ PlaySound(ê°„ê²© ì´ˆ)
 
-                                // °ÔÀÓ ¿ÀºêÁ§Æ® ÁÖ¸Ô ÀÎ½Ä
-                                if (CognizeHandGesture(handGesture, 3.0f)) // ¸Å°³º¯¼ö 3.0f ¼öÁ¤ÇØ¼­ ¿øÇÏ´Â ÃÊ ¸¸Å­ ÁÖ¸ÔÀ» Áã¾î¾ß ÇÔ¼ö ½ÇÇà °¡´É
+                                // ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì£¼ë¨¹ ì¸ì‹
+                                if (CognizeHandGesture(handGesture, 3.0f)) // ë§¤ê°œë³€ìˆ˜ 3.0f ìˆ˜ì •í•´ì„œ ì›í•˜ëŠ” ì´ˆ ë§Œí¼ ì£¼ë¨¹ì„ ì¥ì–´ì•¼ í•¨ìˆ˜ ì‹¤í–‰ ê°€ëŠ¥
                                 {
-                                    // °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ °æ¿ì ÇØ´ç ¿ÀºêÁ§Æ®°¡ ¼±ÅÃµÇ¾úÀ» ¶§
+                                    // ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ê²½ìš° í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ ì„ íƒë˜ì—ˆì„ ë•Œ
                                     gameObjectFunEvent.Raise(sound.objectNum);
                                 }
 
                                 break;
-                            case MainGame.causeSound: // ¼Ò¸®¿ø Ã£±âÀÇ °ÔÀÓ ¿ÀºêÁ§Æ® ÀÎ½Ä ºÎºĞ
+                            case MainGame.causeSound: // ì†Œë¦¬ì› ì°¾ê¸°ì˜ ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì¸ì‹ ë¶€ë¶„
 
-                                // ¼Ò¸® Ãâ·Â
+                                // ì†Œë¦¬ ì¶œë ¥
                                 PlayLoopSound();
                                 gameObjectFunEvent.SSRaise(handCenter);
 
-                                // °ÔÀÓ ¿ÀºêÁ§Æ® ÁÖ¸Ô ÀÎ½Ä
-                                if (CognizeHandGesture(handGesture, 3.0f)) // ¸Å°³º¯¼ö 3.0f ¼öÁ¤ÇØ¼­ ¿øÇÏ´Â ÃÊ ¸¸Å­ ÁÖ¸ÔÀ» Áã¾î¾ß ÇÔ¼ö ½ÇÇà °¡´É
+                                // ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì£¼ë¨¹ ì¸ì‹
+                                if (CognizeHandGesture(handGesture, 3.0f)) // ë§¤ê°œë³€ìˆ˜ 3.0f ìˆ˜ì •í•´ì„œ ì›í•˜ëŠ” ì´ˆ ë§Œí¼ ì£¼ë¨¹ì„ ì¥ì–´ì•¼ í•¨ìˆ˜ ì‹¤í–‰ ê°€ëŠ¥
                                 {
-                                    // °ÔÀÓ ¿ÀºêÁ§Æ®ÀÇ °æ¿ì ÇØ´ç ¿ÀºêÁ§Æ®°¡ ¼±ÅÃµÇ¾úÀ» ¶§
+                                    // ê²Œì„ ì˜¤ë¸Œì íŠ¸ì˜ ê²½ìš° í•´ë‹¹ ì˜¤ë¸Œì íŠ¸ê°€ ì„ íƒë˜ì—ˆì„ ë•Œ
                                     gameObjectFunEvent.Raise(sound.objectNum);
                                 }
 
@@ -147,14 +149,14 @@ public class HandTracking : MonoBehaviour
                     preHit = hit.transform.gameObject;
                 }
             }
-            else // ÀÎ½Ä µ¥ÀÌÅÍ°¡ trueÀÏ °æ¿ì => ÆÄÀÌ½ã ÆÄÀÏÀÌ ½ÇÇàµÇ¾úÀ» ¶§ÀÇ Å¸ÀÌ¹ÖÀ» À§ÇÑ Á¶°Ç
+            else // ì¸ì‹ ë°ì´í„°ê°€ trueì¼ ê²½ìš° => íŒŒì´ì¬ íŒŒì¼ì´ ì‹¤í–‰ë˜ì—ˆì„ ë•Œì˜ íƒ€ì´ë°ì„ ìœ„í•œ ì¡°ê±´
             {
                 isCameraOn = true;
             }
         }
     }
 
-    // ¼Õ ¸ğ¾ç ÀÎ½Ä
+    // ì† ëª¨ì–‘ ì¸ì‹
     private bool CognizeHandGesture(HandGesture hand, float timer)
     {
         bool rockFinish = false;
@@ -164,7 +166,7 @@ public class HandTracking : MonoBehaviour
             case HandGesture.rock:
                 isHandRock = true;
 
-                // ÃÊ ÀÎ½Ä
+                // ì´ˆ ì¸ì‹
                 rockTime += Time.deltaTime;
 
                 if (rockTime >= timer)
@@ -182,7 +184,7 @@ public class HandTracking : MonoBehaviour
         return rockFinish;
     }
     
-    // ¼Ò¸® Ãâ·Â(GameObject, Background¿Í °°ÀÌ °è¼Ó ¹İº¹ÇØ¼­ µé·ÁÁÖ´Â ¿Àµğ¿À)
+    // ì†Œë¦¬ ì¶œë ¥(GameObject, Backgroundì™€ ê°™ì´ ê³„ì† ë°˜ë³µí•´ì„œ ë“¤ë ¤ì£¼ëŠ” ì˜¤ë””ì˜¤)
     private void PlayLoopSound()
     {
         if (preHit == null || hit.collider.gameObject != preHit)
@@ -213,8 +215,8 @@ public class HandTracking : MonoBehaviour
         } 
     }
 
-    // ¼Ò¸® Ãâ·Â(UI¿Í °°ÀÌ °£°İÀ» ÁÖ°í ¹İº¹ÇØ¼­ µé·ÁÁÖ´Â ¿Àµğ¿À)
-    private void PlaySound(float timer) // ¸Å°³º¯¼ö : µé·ÁÁÖ´Â °£°İÀ» ¸î ÃÊ·Î ÁÙ °ÍÀÎÁö.
+    // ì†Œë¦¬ ì¶œë ¥(UIì™€ ê°™ì´ ê°„ê²©ì„ ì£¼ê³  ë°˜ë³µí•´ì„œ ë“¤ë ¤ì£¼ëŠ” ì˜¤ë””ì˜¤)
+    private void PlaySound(float timer) // ë§¤ê°œë³€ìˆ˜ : ë“¤ë ¤ì£¼ëŠ” ê°„ê²©ì„ ëª‡ ì´ˆë¡œ ì¤„ ê²ƒì¸ì§€.
     {
 
         if (preHit == null || hit.collider.gameObject != preHit)
@@ -243,20 +245,20 @@ public class HandTracking : MonoBehaviour
         }
     }
 
-    // ÇöÀç °ÔÀÓ ¼³Á¤
+    // í˜„ì¬ ê²Œì„ ì„¤ì •
     /*public void SetCurScene(MainGame gameName)
     {
         mainGame = gameName;
     }
 */
-    // ÇöÀç ¼Õ Á¤º¸ ¸®ÅÏ
+    // í˜„ì¬ ì† ì •ë³´ ë¦¬í„´
     public Vector3 getHandInfo()
     {
         Vector3 pos = new Vector3(x, y, z);
 
         return pos;
     }
-    // ÇöÀç ¼Õ ¸ğ¾ç ¸®ÅÏ
+    // í˜„ì¬ ì† ëª¨ì–‘ ë¦¬í„´
     public bool getGestureInfo()
     {
         return isHandRock;  
