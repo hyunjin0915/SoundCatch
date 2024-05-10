@@ -9,6 +9,7 @@ public class Sound : MonoBehaviour
     public AudioClip cubeSound;
     public bool isSub;
     public AudioClip subSound;
+    public float volume = 0.8f;
 
 
 

@@ -7,8 +7,10 @@ public class SSManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource subAudioSource;
 
+    public AudioClip[] clips;
+
     //-----------------------------
-    
+
     public GameObject a;
     public GameObject b;
     public GameObject c;
@@ -19,6 +21,8 @@ public class SSManager : MonoBehaviour
 
     //----------------------------------
 
+    public Sound playgroundS;
+    
     public bool[] arrBool = new bool[4] { false, false, false, false};
 
     private float maxSize = 10.3f;
@@ -30,6 +34,7 @@ public class SSManager : MonoBehaviour
 
     private bool inSN = false;
 
+
     void Start()
     {
         audioSource = GameObject.FindGameObjectWithTag("HTManager").GetComponent<AudioSource>();
@@ -40,6 +45,8 @@ public class SSManager : MonoBehaviour
 
         snPos = SetObstacle();
         sdPos = SetObstacle();
+
+        playgroundS.cubeSound = clips[Random.Range(0, 13)];
 
         //------------------------------
         a.transform.position = ssPos;
@@ -72,7 +79,7 @@ public class SSManager : MonoBehaviour
                 audioSource.volume = vol;
                 inSN = false;
                 break;
-        }
+        };
     }
 
     public void CheckAnswer(int objectNum)
