@@ -6,7 +6,7 @@ public class RunPython
     public void RunExe()
     {
         ProcessStartInfo startInfo = new ProcessStartInfo();
-        startInfo.FileName = Application.dataPath + "/Scripts/HandTracking.exe";
+        startInfo.FileName = Application.dataPath + "/Scripts/HandTrackingSC/HandTracking/HandTracking.exe";
         startInfo.UseShellExecute = false;
 
         Process.Start(startInfo);
