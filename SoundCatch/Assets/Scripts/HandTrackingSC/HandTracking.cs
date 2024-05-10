@@ -96,7 +96,6 @@ public class HandTracking : MonoBehaviour
                     }
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("GameObject")) // 인식한 오브젝트가 GameObject인 경우
                     {
-
                         // 게임 구분
                         switch (SceneLoader.Instance.mainGame)
                         {
@@ -197,7 +196,7 @@ public class HandTracking : MonoBehaviour
                 subAscr.panStereo = -1;
                 audioSource.panStereo = 1;
                 subAscr.clip = sound.subSound;
-                subAscr.volume = 0.8f;
+                subAscr.volume = sound.volume;
                 subAscr.Play();
             }
             else
@@ -208,7 +207,7 @@ public class HandTracking : MonoBehaviour
             audioSource.Stop();
             audioSource.loop = true;
             audioSource.clip = sound.cubeSound;
-            audioSource.volume = 0.8f;
+            audioSource.volume = sound.volume;
             audioSource.Play();
 
             rockTime = 0.0f;
@@ -224,7 +223,7 @@ public class HandTracking : MonoBehaviour
             sound = hit.collider.GetComponent<Sound>();
 
             audioSource.Stop();
-            audioSource.volume = 0.8f;
+            audioSource.volume = sound.volume;
             audioSource.PlayOneShot(sound.cubeSound);
             audioSource.clip = sound.cubeSound;
 

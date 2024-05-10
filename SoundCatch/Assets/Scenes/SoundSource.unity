@@ -629,6 +629,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!64 &746777766
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -846,12 +847,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   subAudioSource: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  - {fileID: 8300000, guid: fea4a8b8680ed9846bb4ed3740c7c332, type: 3}
+  - {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
+  - {fileID: 8300000, guid: 7a67f942e888aac4689a2e4036f2e5d9, type: 3}
+  - {fileID: 8300000, guid: 31b1148ec16856c4b862067062d40962, type: 3}
+  - {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  - {fileID: 8300000, guid: 1a7b00472a3140b44b9b9f5fc5340e0b, type: 3}
+  - {fileID: 8300000, guid: 715b158ced990ce4c82bae602dddb87e, type: 3}
+  - {fileID: 8300000, guid: 4b1bfe8cade38124baf5a5413d3b220c, type: 3}
+  - {fileID: 8300000, guid: 0c4820e41fe504b41a4c3b3ef7548efa, type: 3}
+  - {fileID: 8300000, guid: 1976c43ca07700f4fa9660d1b774445d, type: 3}
+  - {fileID: 8300000, guid: b594b70df606b224aa97847ad23479f4, type: 3}
   a: {fileID: 386072626}
   b: {fileID: 88881504}
   c: {fileID: 850688817}
   ssPos: {x: 0, y: 0}
   snPos: {x: 0, y: 0}
   sdPos: {x: 0, y: 0}
+  playgroundS: {fileID: 913195500}
   arrBool: 00000000
   maxVolume: 0.8
   handPos: {x: 0, y: 0}
@@ -949,7 +964,8 @@ MonoBehaviour:
   objectNum: 0
   cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
   isSub: 0
-  subSound: {fileID: 0}
+  subSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  volume: 0.8
 --- !u!64 &913195501
 MeshCollider:
   m_ObjectHideFlags: 0
