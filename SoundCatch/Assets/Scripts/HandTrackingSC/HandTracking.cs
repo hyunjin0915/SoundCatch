@@ -22,6 +22,7 @@ public class HandTracking : MonoBehaviour
     private RaycastHit hit;
     public GameObject preHit;
     private bool isHandRock = false; // 손 모양이 주먹인가
+    private HandGesture handGesture;    // 손 모양. getGestureInfo()에 필요해 저장하도록 변경
     // 손 인식 중심 좌표
     private float x;
     private float y;
@@ -68,7 +69,7 @@ public class HandTracking : MonoBehaviour
 
                 // 손 모양 가져오기
                 float handG = float.Parse(points[63]);
-                HandGesture handGesture = (HandGesture)((int)handG);
+                handGesture = (HandGesture)((int)handG);
 
                 Vector3 handCenter = new Vector3(x, y, z);
 
@@ -250,16 +251,42 @@ public class HandTracking : MonoBehaviour
         mainGame = gameName;
     }
 */
-    // 현재 손 정보 리턴
-    public Vector3 getHandInfo()
+    // 현재 손 위치 정보를 viewportPoint로 변환한 값 리턴
+    public Vector3 getViewportPoint()
+    {
+        Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Vector3 pos = new Vector3(x, y, z);
+        pos = cam.WorldToViewportPoint(pos);
+
+        return pos;
+    }
+
+    // 현재 손 모양 리턴
+    public int getGestureInfo()
+    {
+        int n = 0;
+        if (handGesture == HandGesture.paper)
+        {
+            n = 0;
+        }
+        else if (handGesture == HandGesture.rock)
+        {
+            n = 1;
+        }
+        else if (handGesture == HandGesture.scissors)
+        {
+            n = 2;
+        }
+
+
+        return n;
+    }
+
+    // 현재 손 위치 정보 리턴
+    public Vector3 getHandPos()
     {
         Vector3 pos = new Vector3(x, y, z);
 
         return pos;
-    }
-    // 현재 손 모양 리턴
-    public bool getGestureInfo()
-    {
-        return isHandRock;  
     }
 }

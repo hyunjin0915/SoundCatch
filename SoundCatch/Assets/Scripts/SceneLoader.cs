@@ -12,7 +12,7 @@ public enum MainGame
 public class SceneLoader : Singleton<SceneLoader>
 {
     public MainGame mainGame;
-    string curSceneName = "MainScene";
+    string curSceneName = "HandTracking";
     [SerializeField]
     float transitionTime = 1f;
 
