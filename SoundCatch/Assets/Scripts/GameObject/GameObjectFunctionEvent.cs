@@ -25,4 +25,10 @@ public class GameObjectFunctionEvent : ScriptableObject
     {
         listener.OnSSEventRaised(handPos);
     }
+
+    // 음 맞추기 게임에서 필요해서 추가
+    public void TSRaise(Vector3 handPos)
+    {
+        listener.OnTSEventRaised();
+    }
 }
