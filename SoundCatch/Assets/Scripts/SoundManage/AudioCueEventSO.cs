@@ -11,6 +11,7 @@ public class AudioCueEventSO : ScriptableObject
 
     public void RaisePlayAudio()
     {
+        Debug.Log("가이드음성재생");
         OnAudioCue?.Invoke();
     }
 

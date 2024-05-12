@@ -7,11 +7,15 @@ public class GuideAudioManager : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioCueEventSO audioCueEventSO;
+
+    public bool isNowGuidePlaying = false;
     
     public void PlayGuideSound()
     {
         audioSource.clip = audioCueEventSO.audioClip;
+        isNowGuidePlaying = true;
         audioSource?.Play();
+        isNowGuidePlaying = false;
     }
 
     private void OnEnable()
