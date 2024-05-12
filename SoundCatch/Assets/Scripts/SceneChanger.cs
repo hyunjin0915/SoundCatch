@@ -15,7 +15,7 @@ public class SceneChanger : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            SceneLoader.Instance.ChangeScene("MainScene");
+            SceneLoader.Instance.ChangeScene("SelectGame");
         }
         else if(Input.GetMouseButtonDown(1))
         {
