@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &263620537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 263620539}
+  - component: {fileID: 263620538}
+  m_Layer: 0
+  m_Name: VoiceGuider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &263620538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263620537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0715db1afa01f4993f0b397a0acba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _curSceneAudioGuide: {fileID: 11400000, guid: af2b8d89f8c2e9148bf89984b407b433, type: 2}
+  _curSceneAudioEventChannel: {fileID: 11400000, guid: fb52448b81b83c042a090668262ddd84, type: 2}
+--- !u!4 &263620539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263620537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &361719279
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,6 +793,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!64 &1013694071
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1209,6 +1256,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: fea4a8b8680ed9846bb4ed3740c7c332, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!4 &6983462474201243849
 Transform:
   m_ObjectHideFlags: 0
@@ -1332,6 +1380,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!114 &8248674782989442819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1439,6 +1488,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 31b1148ec16856c4b862067062d40962, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1449,3 +1499,4 @@ SceneRoots:
   - {fileID: 5562641338959466410}
   - {fileID: 2068348202}
   - {fileID: 7688275087697108799}
+  - {fileID: 263620539}

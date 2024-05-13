@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023584784}
   - component: {fileID: 2023584783}
+  - component: {fileID: 2023584785}
   m_Layer: 0
   m_Name: TuningSoundManager
   m_TagString: Untagged
@@ -338,7 +339,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd0535398204fc488937ea0842c4b74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 756345739}
+  audioSource: {fileID: 0}
+  subAudioSource: {fileID: 0}
+  clip: {fileID: 0}
+  sounds:
+  - {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
+  - {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
+  - {fileID: 8300000, guid: 31b1148ec16856c4b862067062d40962, type: 3}
+  - {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
+  - {fileID: 8300000, guid: 715b158ced990ce4c82bae602dddb87e, type: 3}
+  - {fileID: 8300000, guid: 0c4820e41fe504b41a4c3b3ef7548efa, type: 3}
+  - {fileID: 8300000, guid: b594b70df606b224aa97847ad23479f4, type: 3}
+  - {fileID: 8300000, guid: 27acae35a81dc4529b2aa5b09c529dd9, type: 3}
+  - {fileID: 8300000, guid: fd77f9934034a4197921b6e58b0752bd, type: 3}
 --- !u!4 &2023584784
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +367,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023584785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023584782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f198fc3dfcbcbe64aa816a3e4ad4b693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e6ec1c11c5c08ee4fbaf5647d075b026, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2023584783}
+        m_TargetAssemblyTypeName: TuningSoundManager, Assembly-CSharp
+        m_MethodName: checkAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ssResponse:
+    m_PersistentCalls:
+      m_Calls: []
+  tsResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2023584783}
+        m_TargetAssemblyTypeName: TuningSoundManager, Assembly-CSharp
+        m_MethodName: checkAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

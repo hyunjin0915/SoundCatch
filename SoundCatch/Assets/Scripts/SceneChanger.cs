@@ -15,12 +15,12 @@ public class SceneChanger : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            SceneLoader.Instance.ChangeScene("MainScene");
+            SceneLoader.Instance.ChangeScene("SelectGame");
         }
         else if(Input.GetMouseButtonDown(1))
         {
             Debug.Log("게임선택화면호출");
-            SceneLoader.Instance.ChangeScene("HiddenSound");
+            SceneLoader.Instance.ChangeScene("TuningSound");
             
         }
     }
