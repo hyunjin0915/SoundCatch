@@ -11,5 +11,4 @@ public class AudioGuideCue : MonoBehaviour
     {
         _curSceneAudioEventChannel.RaisePlayAudio(_curSceneAudioGuide);
     }
-
 }
