@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class HiddenSoundManager : MonoBehaviour
 {
+    public AudioInfoSO _ClickRightBlock;
+    public AudioEventChannelSO _ClickRightBlockEC;
+    public AudioInfoSO _ClickWrongBlock;
+    public AudioEventChannelSO _ClickWrongBlockEC;
+    
     public void ClickRightBlock() //정답 블록
     {
-        Debug.Log("정답입니다");
+        _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
     }
      public void WrongBlock()
     {
-        Debug.Log("오답입니다");
+        _ClickWrongBlockEC.RaisePlayAudio(_ClickRightBlock);
     }
      public void ClickBackGround()
     {
