@@ -12,6 +12,9 @@ enum HandGesture
 
 public class HandTracking : MonoBehaviour
 {
+    [SerializeField]
+    AudioGuideManager audioGuideManager;
+    
     // event
     public UIFunctionEvent uiFunEvent;
     public GameObjectFunctionEvent gameObjectFunEvent;
@@ -75,7 +78,7 @@ public class HandTracking : MonoBehaviour
 
                 Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // 임시 레이어 표시
 
-                if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer)) 
+                if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer) && !audioGuideManager.audioSource.isPlaying) 
                 {
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {

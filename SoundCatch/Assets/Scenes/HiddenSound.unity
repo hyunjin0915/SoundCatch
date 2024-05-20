@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.451401, g: 0.5008942, b: 0.5723129, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -156,9 +156,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNum: 24
-  cubeSound: {fileID: 8300000, guid: 715b158ced990ce4c82bae602dddb87e, type: 3}
+  cubeSound: {fileID: 8300000, guid: ae4c02d15d5b84c44a45c3e48bc187c5, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!64 &33429108
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -297,6 +298,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &60022216
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -419,6 +421,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 1a7b00472a3140b44b9b9f5fc5340e0b, type: 3}
   isSub: 0
   subSound: {fileID: 8300000, guid: 1976c43ca07700f4fa9660d1b774445d, type: 3}
+  volume: 0.8
 --- !u!65 &81250686
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -541,6 +544,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &140259296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -663,6 +667,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &146719559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -840,6 +845,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: fea4a8b8680ed9846bb4ed3740c7c332, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &210339411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -962,6 +968,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &306508088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1084,6 +1091,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &333655174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1206,6 +1214,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 4b1bfe8cade38124baf5a5413d3b220c, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &367440128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1328,6 +1337,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: fea4a8b8680ed9846bb4ed3740c7c332, type: 3}
   isSub: 0
   subSound: {fileID: 8300000, guid: 1976c43ca07700f4fa9660d1b774445d, type: 3}
+  volume: 0.8
 --- !u!65 &423051888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1521,6 +1531,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 0c4820e41fe504b41a4c3b3ef7548efa, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!1 &601023506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1572,6 +1583,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: b594b70df606b224aa97847ad23479f4, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &601023509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1694,6 +1706,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 715b158ced990ce4c82bae602dddb87e, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &624257597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1816,6 +1829,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 4b1bfe8cade38124baf5a5413d3b220c, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &722681807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2030,6 +2044,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
   isSub: 1
   subSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
+  volume: 0.8
 --- !u!65 &814833546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2101,6 +2116,71 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814833543}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &865009937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: _curSceneAudioGuide
+      value: 
+      objectReference: {fileID: 11400000, guid: 8336e5b84f4f9ce4fb218ba979b4636f, type: 2}
+    - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: _curSceneAudioEventChannel
+      value: 
+      objectReference: {fileID: 11400000, guid: b94ebbde133fee54bb3e89bfe190c5e9, type: 2}
+    - target: {fileID: 5190315182973107867, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_Name
+      value: VoiceGuider
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
 --- !u!1 &1007946699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2152,6 +2232,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1007946702
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2274,6 +2355,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 31b1148ec16856c4b862067062d40962, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1067768406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2396,6 +2478,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1120820209
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2518,6 +2601,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 7c0f89e2c5583ee4b90b62c2f01c7469, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1151654179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2640,6 +2724,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 1976c43ca07700f4fa9660d1b774445d, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1563129106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2856,6 +2941,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 7a67f942e888aac4689a2e4036f2e5d9, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1663655233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2978,6 +3064,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 31b1148ec16856c4b862067062d40962, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1837777534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3100,6 +3187,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: b594b70df606b224aa97847ad23479f4, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &1962531355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3222,6 +3310,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 1a7b00472a3140b44b9b9f5fc5340e0b, type: 3}
   isSub: 0
   subSound: {fileID: 0}
+  volume: 0.8
 --- !u!65 &2040528484
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3344,6 +3433,7 @@ MonoBehaviour:
   cubeSound: {fileID: 8300000, guid: 715b158ced990ce4c82bae602dddb87e, type: 3}
   isSub: 0
   subSound: {fileID: 8300000, guid: 1976c43ca07700f4fa9660d1b774445d, type: 3}
+  volume: 0.8
 --- !u!65 &2048072202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3460,6 +3550,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e7a8f29a8160343a4e185ceca9eb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ClickRightBlock: {fileID: 11400000, guid: 177169fa4f6f91a478710088b3732e71, type: 2}
+  _ClickRightBlockEC: {fileID: 11400000, guid: 52f96cf32a9c3a749bc810a43351d7c1, type: 2}
+  _ClickWrongBlock: {fileID: 11400000, guid: 9f301da82c5a6374b94974be77917571, type: 2}
+  _ClickWrongBlockEC: {fileID: 11400000, guid: 9fbf7fefacc6caa40a423435e7e8ead8, type: 2}
 --- !u!114 &3674855342735148642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3833,3 +3927,4 @@ SceneRoots:
   - {fileID: 156950004}
   - {fileID: 1405626664243844472}
   - {fileID: 33429111}
+  - {fileID: 865009937}
