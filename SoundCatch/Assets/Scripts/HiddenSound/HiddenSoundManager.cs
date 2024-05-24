@@ -12,6 +12,7 @@ public class HiddenSoundManager : MonoBehaviour
     public void ClickRightBlock() //정답 블록
     {
         _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
+        SceneLoader.Instance.ChangeScene("GameClear");
     }
      public void WrongBlock()
     {

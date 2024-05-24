@@ -7,6 +7,9 @@ public class SSManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioSource subAudioSource;
 
+    public AudioInfoSO _ClickRightBlock;
+    public AudioEventChannelSO _ClickRightBlockEC;
+
     public AudioClip[] clips;
 
     //-----------------------------
@@ -86,7 +89,10 @@ public class SSManager : MonoBehaviour
     {
         if (handPos.x >= ssPos.x - 0.4f && handPos.x <= ssPos.x + 0.4f && handPos.y >= ssPos.y - 0.4f && handPos.y <= ssPos.y + 0.4f)
         {
-            Debug.Log("Clear"); // 임의 작성
+            _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
+            SceneLoader.Instance.ChangeScene("GameClear");
+
+            //Debug.Log("Clear"); // 임의 작성
         }
     }
 

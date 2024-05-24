@@ -417,6 +417,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b594b70df606b224aa97847ad23479f4, type: 3}
   - {fileID: 8300000, guid: 27acae35a81dc4529b2aa5b09c529dd9, type: 3}
   - {fileID: 8300000, guid: fd77f9934034a4197921b6e58b0752bd, type: 3}
+  _ClickRightBlock: {fileID: 11400000, guid: 177169fa4f6f91a478710088b3732e71, type: 2}
+  _ClickRightBlockEC: {fileID: 11400000, guid: 52f96cf32a9c3a749bc810a43351d7c1, type: 2}
 --- !u!4 &2023584784
 Transform:
   m_ObjectHideFlags: 0

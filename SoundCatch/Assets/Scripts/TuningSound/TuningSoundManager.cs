@@ -19,6 +19,8 @@ public class TuningSoundManager : MonoBehaviour
     public AudioSource subAudioSource;
     public AudioClip clip;
     public AudioClip[] sounds;
+    public AudioInfoSO _ClickRightBlock;
+    public AudioEventChannelSO _ClickRightBlockEC;
 
     GameObject ht;
     float time = 0.0f;
@@ -142,6 +144,10 @@ public class TuningSoundManager : MonoBehaviour
                 }
                 subAudioSource.clip = sounds[7];
                 subAudioSource.Play();
+                
+                _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
+                SceneLoader.Instance.ChangeScene("GameClear");
+
                 // 게임 일시정지
                 // Time.timeScale = 0.0f;
                 // UnityEngine.Debug.Log("Win");
