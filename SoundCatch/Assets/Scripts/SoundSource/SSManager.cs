@@ -49,7 +49,7 @@ public class SSManager : MonoBehaviour
         snPos = SetObstacle();
         sdPos = SetObstacle();
 
-        playgroundS.cubeSound = clips[Random.Range(0, 13)];
+        playgroundS.cubeSound = clips[Random.Range(0, 11)];
 
         //------------------------------
         a.transform.position = ssPos;

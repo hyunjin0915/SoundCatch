@@ -80,11 +80,11 @@ public class HandTracking : MonoBehaviour
 
                 if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer) && !audioGuideManager.audioSource.isPlaying) 
                 {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Loading"))
+                    /*if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Loading"))
                     {
                         SceneLoader.Instance.ChangeScene("MainScene");
                     }
-                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
+                    else*/ if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
                         // 소리 출력
                         PlaySound(3.0f);
@@ -158,7 +158,10 @@ public class HandTracking : MonoBehaviour
             }
             else // 인식 데이터가 true일 경우 => 파이썬 파일이 실행되었을 때의 타이밍을 위한 조건
             {
-                isCameraOn = true;
+                if (!isCameraOn) {
+                    SceneLoader.Instance.ChangeScene("MainScene");
+                    isCameraOn = true;
+                }
             }
         }
     }
