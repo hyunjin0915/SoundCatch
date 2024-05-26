@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108c6bc71a3210c42b5265c22dadf910, type: 3}
   m_Name: RightBlockAGInfo
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 742dfb9539636cc4c8398a4db91aee44, type: 3}
+  audioClip: {fileID: 8300000, guid: e9ba2aedfbc44124caf8950d82e4ca5c, type: 3}

@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 108c6bc71a3210c42b5265c22dadf910, type: 3}
-  m_Name: SelectGameAGInfo
+  m_Script: {fileID: 11500000, guid: 1771b23c3b539124ab5aace31b2338bc, type: 3}
+  m_Name: WaitLoadingAGChannel
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 62a134b01683d1a4cb310a4d3166f1fa, type: 3}

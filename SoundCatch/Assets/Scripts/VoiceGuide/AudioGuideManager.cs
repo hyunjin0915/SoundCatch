@@ -11,6 +11,7 @@ public class AudioGuideManager : MonoBehaviour
     public AudioEventChannelSO SoundDicAudioEventChannel;
     public AudioEventChannelSO SoundSourceAudioEventChannel;
     public AudioEventChannelSO TuningSoundAudioEventChannel;
+    public AudioEventChannelSO WaitLoadingAudioEventChannel;
 
     public void PlayGuideSound(AudioInfoSO _audioInfoSO)
     {
@@ -28,6 +29,7 @@ public class AudioGuideManager : MonoBehaviour
         SoundDicAudioEventChannel.OnAudioCue += PlayGuideSound;
         SoundSourceAudioEventChannel.OnAudioCue += PlayGuideSound;
         TuningSoundAudioEventChannel.OnAudioCue += PlayGuideSound;
+        WaitLoadingAudioEventChannel.OnAudioCue += PlayGuideSound;
     }
     private void OnDisable()
     {
@@ -37,6 +39,7 @@ public class AudioGuideManager : MonoBehaviour
         SoundDicAudioEventChannel.OnAudioCue -= PlayGuideSound;
         SoundSourceAudioEventChannel.OnAudioCue -= PlayGuideSound;
         TuningSoundAudioEventChannel.OnAudioCue -= PlayGuideSound;
+        WaitLoadingAudioEventChannel.OnAudioCue -= PlayGuideSound;
     }
 
 }

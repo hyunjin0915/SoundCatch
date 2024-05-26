@@ -476,6 +476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bcf12658d4a1b743a2171a7fb3a2935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioGuideManager: {fileID: 0}
   uiFunEvent: {fileID: 11400000, guid: 8c9622bcb6f532d4c81a72adc26e9ba2, type: 2}
   gameObjectFunEvent: {fileID: 11400000, guid: e6ec1c11c5c08ee4fbaf5647d075b026, type: 2}
   preHit: {fileID: 0}
@@ -847,6 +848,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   subAudioSource: {fileID: 0}
+  _ClickRightBlock: {fileID: 11400000, guid: 177169fa4f6f91a478710088b3732e71, type: 2}
+  _ClickRightBlockEC: {fileID: 11400000, guid: 52f96cf32a9c3a749bc810a43351d7c1, type: 2}
   clips:
   - {fileID: 8300000, guid: 867a4325b7831d34d85ad76ced2438ab, type: 3}
   - {fileID: 8300000, guid: fea4a8b8680ed9846bb4ed3740c7c332, type: 3}
