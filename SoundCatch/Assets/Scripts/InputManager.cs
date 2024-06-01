@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public UIFunctionEvent uiFunEvent;
+    public AudioSource guidevoiceSC;
 
     [SerializeField] private int uiNum = 0;
 
@@ -34,7 +35,10 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            uiFunEvent?.Raise(uiNum);
+            if (!guidevoiceSC.isPlaying)
+            {
+                uiFunEvent?.Raise(uiNum);
+            }
         }
     }
 
