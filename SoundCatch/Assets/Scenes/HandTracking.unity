@@ -454,7 +454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &721759276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &915368320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -724,6 +724,10 @@ MonoBehaviour:
   handClose: {fileID: 235717706, guid: 3b50188a752a7184fa98cf688d96da31, type: 3}
   handOpen: {fileID: -1443413392, guid: 3b50188a752a7184fa98cf688d96da31, type: 3}
   handV: {fileID: 1886780572, guid: 3b50188a752a7184fa98cf688d96da31, type: 3}
+  handClips:
+  - {fileID: 8300000, guid: b41dd66f8a793ad4eb7a23ef73f4affd, type: 3}
+  - {fileID: 8300000, guid: d445083804428924b94ccc4aaed25cb9, type: 3}
+  - {fileID: 8300000, guid: bfb6a3a9342466b4299ebae8f103e475, type: 3}
 --- !u!1 &1304318078
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1811280975
 MonoBehaviour:
   m_ObjectHideFlags: 0
