@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108c6bc71a3210c42b5265c22dadf910, type: 3}
   m_Name: HiddenSoundAGInfo
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 47ed88ba15202524fa2a55970910589e, type: 3}

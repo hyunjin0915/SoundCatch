@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108c6bc71a3210c42b5265c22dadf910, type: 3}
   m_Name: TuningSoundAGInfo
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 54d24e9aee3f4e645b121c9fe7b2a99d, type: 3}
+  audioClip: {fileID: 8300000, guid: 06c8f37b2afba71488c9dc2acb0bd00e, type: 3}

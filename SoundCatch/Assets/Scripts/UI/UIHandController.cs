@@ -13,6 +13,9 @@ public class UIHandController : MonoBehaviour
 
     // 이미지
     Image handImg;
+    // 사운드
+    AudioSource audioSource;
+    public AudioClip[] handClips;
 
     // 손 움직임을 따라가기 위함
     GameObject ht;
@@ -26,6 +29,8 @@ public class UIHandController : MonoBehaviour
         handImg = GetComponent<Image>();
         ht = GameObject.FindGameObjectWithTag("HTManager");
         rectTransform = GetComponent<RectTransform>();
+
+        audioSource = ht.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +40,7 @@ public class UIHandController : MonoBehaviour
         handPos = ht.GetComponent<HandTracking>().getHandPos();
         rectTransform.position = handPos;
 
+        int oldGesture = gesture;
         // 손 모양에 맞게 손 UI 모양 변경
         gesture = ht.GetComponent<HandTracking>().getGestureInfo();
         if (gesture == 0 )
@@ -47,6 +53,23 @@ public class UIHandController : MonoBehaviour
         else if(gesture == 2 )
         {
             handImg.sprite = handV;
+        }
+        
+        // 손 모양 변경시 소리 재생
+        if (oldGesture !=  gesture)
+        {
+            if (gesture == 0)
+            {
+                audioSource.PlayOneShot(handClips[0]);
+            }
+            else if (gesture == 1)
+            {
+                audioSource.PlayOneShot(handClips[1]);
+            }
+            else if (gesture == 2)
+            {
+                audioSource.PlayOneShot(handClips[2]);
+            }
         }
     }
 }

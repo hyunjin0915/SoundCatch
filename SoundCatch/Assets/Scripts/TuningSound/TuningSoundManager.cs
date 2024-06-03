@@ -14,6 +14,7 @@ public class TuningSoundManager : MonoBehaviour
     int gesture;
     Vector3 handPos;
     Vector3 handPosOld;
+    bool pitchChange;
 
     public AudioSource audioSource;
     public AudioSource subAudioSource;
@@ -23,8 +24,8 @@ public class TuningSoundManager : MonoBehaviour
     public AudioEventChannelSO _ClickRightBlockEC;
 
     GameObject ht;
-    float time = 0.0f;
-    float asTime = 0.0f;
+    float time = 0.0f;      // 판정 타이머용
+    float asTime = 0.0f;    // 스테이지 음 반복재생용
 
     private GameObjectEventListener listener;
 
@@ -59,7 +60,7 @@ public class TuningSoundManager : MonoBehaviour
         UnityEngine.Debug.Log("Start. handPos : " + handPos);
     }
 
-    private void FixedUpdate()
+    void Update()
     {
         // 스테이지 음 반복 재생
         asTime += Time.deltaTime;
@@ -78,45 +79,21 @@ public class TuningSoundManager : MonoBehaviour
         if (handPosOld != handPos)
         {
             listener.OnTSEventRaised();
-            UnityEngine.Debug.Log("Event. handPos : " + handPos);
+            // UnityEngine.Debug.Log("Event. handPos : " + handPos);
         }
 
         // 손 모양이 주먹이면 카운트
-        time += Time.deltaTime;
+        if(gesture == 1)
+        {
+            time += Time.deltaTime;
+        }
     }
 
     public void checkAnswer()
     {
         // viewport point의 y값에 따라 피치 변경
         int pPitchOld = pPitch;
-        if (handPos[1] < 0.55)
-        {
-            pPitch = 0;
-        }
-        else if (handPos[1] < 0.65)
-        {
-            pPitch = 1;
-        }
-        else if (handPos[1] < 0.75)
-        {
-            pPitch = 2;
-        }
-        else if (handPos[1] < 0.85)
-        {
-            pPitch = 3;
-        }
-        else if (handPos[1] < 0.95)
-        {
-            pPitch = 4;
-        }
-        else if (handPos[1] < 1.05)
-        {
-            pPitch = 5;
-        }
-        else
-        {
-            pPitch = 6;
-        }
+        setpPitch();
 
         UnityEngine.Debug.Log("pPitch : " + pPitch);
 
@@ -125,6 +102,7 @@ public class TuningSoundManager : MonoBehaviour
             subAudioSource.Stop();
             subAudioSource.clip = sounds[pPitch];
             subAudioSource.Play();
+            pitchChange = true;
         }
 
 
@@ -132,7 +110,7 @@ public class TuningSoundManager : MonoBehaviour
         gesture = ht.GetComponent<HandTracking>().getGestureInfo();
         UnityEngine.Debug.Log("Gesture: " + gesture);
 
-        if ((gesture == 1) && (time >= 2.0f))
+        if ((gesture == 1) && (time >= 0.75f) && (pitchChange))
         {
             // 피치를 맞췄다면
             if (pPitch == stagePitch)
@@ -145,12 +123,9 @@ public class TuningSoundManager : MonoBehaviour
                 subAudioSource.clip = sounds[7];
                 subAudioSource.Play();
                 
+                // 게임 클리어 씬으로 전환
                 _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
                 SceneLoader.Instance.ChangeScene("GameClear");
-
-                // 게임 일시정지
-                // Time.timeScale = 0.0f;
-                // UnityEngine.Debug.Log("Win");
             }
             else
             {
@@ -167,6 +142,41 @@ public class TuningSoundManager : MonoBehaviour
 
             // 타이머 초기화
             time = 0.0f;
+            // 다음에 위치가 변경될때까지 판정 안 함
+            pitchChange = false;
+        }
+    }
+
+    // 손 위치에 따른 pPitch 판정부. 길어서 따로 뺌
+    void setpPitch()
+    {
+        if (handPos[1] < 0.25)
+        {
+            pPitch = 0;
+        }
+        else if (handPos[1] < 0.35)
+        {
+            pPitch = 1;
+        }
+        else if (handPos[1] < 0.45)
+        {
+            pPitch = 2;
+        }
+        else if (handPos[1] < 0.55)
+        {
+            pPitch = 3;
+        }
+        else if (handPos[1] < 0.65)
+        {
+            pPitch = 4;
+        }
+        else if (handPos[1] < 0.75)
+        {
+            pPitch = 5;
+        }
+        else
+        {
+            pPitch = 6;
         }
     }
 }
