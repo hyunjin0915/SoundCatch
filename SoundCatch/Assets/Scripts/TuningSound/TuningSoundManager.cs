@@ -154,23 +154,23 @@ public class TuningSoundManager : MonoBehaviour
         {
             pPitch = 0;
         }
-        else if (handPos[1] < 0.35)
+        else if (handPos[1] < 0.325)
         {
             pPitch = 1;
         }
-        else if (handPos[1] < 0.45)
+        else if (handPos[1] < 0.4)
         {
             pPitch = 2;
         }
-        else if (handPos[1] < 0.55)
+        else if (handPos[1] < 0.475)
         {
             pPitch = 3;
         }
-        else if (handPos[1] < 0.65)
+        else if (handPos[1] < 0.55)
         {
             pPitch = 4;
         }
-        else if (handPos[1] < 0.75)
+        else if (handPos[1] < 0.625)
         {
             pPitch = 5;
         }
