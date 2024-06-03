@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _curSceneAudioGuide: {fileID: 11400000, guid: 0696d40a61a357245bf9e8740fc87372, type: 2}
-  _curSceneAudioEventChannel: {fileID: 11400000, guid: d228d46616eea014eaa38ab378490fc2, type: 2}
+  _curSceneAudioEventChannel: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
 --- !u!4 &263620539
 Transform:
   m_ObjectHideFlags: 0

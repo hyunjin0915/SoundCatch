@@ -774,13 +774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1304318081}
-  MainAudioEventChannel: {fileID: 11400000, guid: fb52448b81b83c042a090668262ddd84, type: 2}
-  SelectGameAudioEventChannel: {fileID: 11400000, guid: 0f3c84065130b13409ebebe795f76a9e, type: 2}
-  HiddenSoundAudioEventChannel: {fileID: 11400000, guid: b94ebbde133fee54bb3e89bfe190c5e9, type: 2}
-  SoundDicAudioEventChannel: {fileID: 11400000, guid: 86664b9bbac48ed41a8339f81f489f6e, type: 2}
-  SoundSourceAudioEventChannel: {fileID: 11400000, guid: 45abc7ee7b7f4594e8864d92a77e8926, type: 2}
-  TuningSoundAudioEventChannel: {fileID: 11400000, guid: 49c865237b5536b49a81c8dbb543a9e0, type: 2}
-  WaitLoadingAudioEventChannel: {fileID: 11400000, guid: 99377bef4f2064e4eaf2f7cbabfd1087, type: 2}
+  SceneInfoAGChannel: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
 --- !u!82 &1304318081
 AudioSource:
   m_ObjectHideFlags: 0

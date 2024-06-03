@@ -80,11 +80,11 @@ public class HandTracking : MonoBehaviour
 
                 if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer) && !audioGuideManager.audioSource.isPlaying) 
                 {
-                    /*if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Loading"))
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Loading"))
                     {
-                        SceneLoader.Instance.ChangeScene("MainScene");
+                        SceneLoader.Instance.ChangeScene("Explanation");
                     }
-                    else*/ if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
+                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
                         // 소리 출력
                         PlaySound(3.0f);
