@@ -14,6 +14,7 @@ public class TuningSoundManager : MonoBehaviour
     int gesture;
     Vector3 handPos;
     Vector3 handPosOld;
+    bool pitchChange;
 
     public AudioSource audioSource;
     public AudioSource subAudioSource;
@@ -78,7 +79,7 @@ public class TuningSoundManager : MonoBehaviour
         if (handPosOld != handPos)
         {
             listener.OnTSEventRaised();
-            UnityEngine.Debug.Log("Event. handPos : " + handPos);
+            // UnityEngine.Debug.Log("Event. handPos : " + handPos);
         }
 
         // 손 모양이 주먹이면 카운트
@@ -101,6 +102,7 @@ public class TuningSoundManager : MonoBehaviour
             subAudioSource.Stop();
             subAudioSource.clip = sounds[pPitch];
             subAudioSource.Play();
+            pitchChange = true;
         }
 
 
@@ -108,7 +110,7 @@ public class TuningSoundManager : MonoBehaviour
         gesture = ht.GetComponent<HandTracking>().getGestureInfo();
         UnityEngine.Debug.Log("Gesture: " + gesture);
 
-        if ((gesture == 1) && (time >= 0.75f))
+        if ((gesture == 1) && (time >= 0.75f) && (pitchChange))
         {
             // 피치를 맞췄다면
             if (pPitch == stagePitch)
@@ -140,6 +142,8 @@ public class TuningSoundManager : MonoBehaviour
 
             // 타이머 초기화
             time = 0.0f;
+            // 다음에 위치가 변경될때까지 판정 안 함
+            pitchChange = false;
         }
     }
 
