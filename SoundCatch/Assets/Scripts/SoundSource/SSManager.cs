@@ -93,6 +93,9 @@ public class SSManager : MonoBehaviour
             SceneLoader.Instance.ChangeScene("GameClear");
 
             //Debug.Log("Clear"); // 임의 작성
+        } else
+        {
+            audioSource.Play();
         }
     }
 
@@ -134,16 +137,16 @@ public class SSManager : MonoBehaviour
         switch (i)
         {
             case 0:
-                return new Vector2(Random.Range(-4.2f, -0.1f), Random.Range(3.7f, 5.3f));
+                return new Vector2(Random.Range(-2.7f, -0.1f), Random.Range(3.7f, 4.7f));
                 break;
             case 1:
-                return new Vector2(Random.Range(0.7f, 5.0f), Random.Range(3.7f, 5.3f));
+                return new Vector2(Random.Range(0.7f, 3.3f), Random.Range(3.7f, 4.7f));
                 break;
             case 2:
-                return new Vector2(Random.Range(-4.2f, -0.1f), Random.Range(1.3f, 2.8f));
+                return new Vector2(Random.Range(-2.7f, -0.1f), Random.Range(1.8f, 2.8f));
                 break;
             default:
-                return new Vector2(Random.Range(0.7f, 5.0f), Random.Range(1.3f, 2.8f));
+                return new Vector2(Random.Range(0.7f, 3.3f), Random.Range(1.8f, 2.8f));
                 break;
 
         }
