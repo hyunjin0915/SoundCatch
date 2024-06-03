@@ -21,6 +21,7 @@ public class Explanation : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             SceneLoader.Instance.ChangeScene("MainScene");
+            GameObject.FindGameObjectWithTag("InputManager").GetComponent<InputManager>().enabled = true;
         }
     }
 }
