@@ -79,12 +79,8 @@ public class HandTracking : MonoBehaviour
                 Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // 임시 레이어 표시
 
                 if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer) && !audioGuideManager.audioSource.isPlaying) 
-                {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Loading"))
-                    {
-                        SceneLoader.Instance.ChangeScene("Explanation");
-                    }
-                    else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
+                {                   
+                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
                         // 소리 출력
                         PlaySound(3.0f);
@@ -133,6 +129,8 @@ public class HandTracking : MonoBehaviour
                                 // 게임 오브젝트 주먹 인식
                                 if (CognizeHandGesture(handGesture, 3.0f)) // 매개변수 3.0f 수정해서 원하는 초 만큼 주먹을 쥐어야 함수 실행 가능
                                 {
+                                    audioSource.Stop();
+                                    subAscr.Stop();
                                     // 게임 오브젝트의 경우 해당 오브젝트가 선택되었을 때
                                     gameObjectFunEvent.Raise(sound.objectNum);
                                 }
@@ -147,6 +145,8 @@ public class HandTracking : MonoBehaviour
                                 // 게임 오브젝트 주먹 인식
                                 if (CognizeHandGesture(handGesture, 3.0f)) // 매개변수 3.0f 수정해서 원하는 초 만큼 주먹을 쥐어야 함수 실행 가능
                                 {
+                                    audioSource.Stop();
+                                    subAscr.Stop();
                                     // 게임 오브젝트의 경우 해당 오브젝트가 선택되었을 때
                                     gameObjectFunEvent.Raise(sound.objectNum);
                                 }
@@ -161,7 +161,7 @@ public class HandTracking : MonoBehaviour
             else // 인식 데이터가 true일 경우 => 파이썬 파일이 실행되었을 때의 타이밍을 위한 조건
             {
                 if (!isCameraOn) {
-                    SceneLoader.Instance.ChangeScene("MainScene");
+                    SceneLoader.Instance.ChangeScene("Explanation");
                     isCameraOn = true;
                 }
             }

@@ -16,7 +16,11 @@ public class Explanation : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-        _curSceneAudioEventChannel.RaisePlayAudio(_curSceneAudioGuide);
+            _curSceneAudioEventChannel.RaisePlayAudio(_curSceneAudioGuide);
+        }
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneLoader.Instance.ChangeScene("MainScene");
         }
     }
 }
