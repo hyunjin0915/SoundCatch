@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 108c6bc71a3210c42b5265c22dadf910, type: 3}
-  m_Name: SoundSourceAGInfo
+  m_Name: ExplainAGInfo
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 91bedf476bf4c9441929318c58d7e525, type: 3}
+  audioClip: {fileID: 8300000, guid: 087d45ef023277b428d0853164b0c636, type: 3}

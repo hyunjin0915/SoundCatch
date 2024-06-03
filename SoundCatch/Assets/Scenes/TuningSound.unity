@@ -407,7 +407,7 @@ PrefabInstance:
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioEventChannel
       value: 
-      objectReference: {fileID: 11400000, guid: 49c865237b5536b49a81c8dbb543a9e0, type: 2}
+      objectReference: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
     - target: {fileID: 5190315182973107867, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: m_Name
       value: VoiceGuider

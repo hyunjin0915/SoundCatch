@@ -78,7 +78,7 @@ public class UDPReceive : Singleton<UDPReceive>
     void Update()
     {
         // 임시 핸드트래킹 종료
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             ExitHandTracking();
         }
