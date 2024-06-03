@@ -3551,9 +3551,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ClickRightBlock: {fileID: 11400000, guid: 177169fa4f6f91a478710088b3732e71, type: 2}
-  _ClickRightBlockEC: {fileID: 11400000, guid: 52f96cf32a9c3a749bc810a43351d7c1, type: 2}
+  _ClickRightBlockEC: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
   _ClickWrongBlock: {fileID: 11400000, guid: 9f301da82c5a6374b94974be77917571, type: 2}
-  _ClickWrongBlockEC: {fileID: 11400000, guid: 9fbf7fefacc6caa40a423435e7e8ead8, type: 2}
+  _ClickWrongBlockEC: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
 --- !u!114 &3674855342735148642
 MonoBehaviour:
   m_ObjectHideFlags: 0
