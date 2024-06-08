@@ -7,44 +7,50 @@ public class AudioGuideManager : MonoBehaviour
     public AudioSource audioSource;
     public AudioEventChannelSO SceneInfoAGChannel;
 
-   /* public AudioEventChannelSO MainAudioEventChannel;
-    public AudioEventChannelSO SelectGameAudioEventChannel;
-    public AudioEventChannelSO HiddenSoundAudioEventChannel;
-    public AudioEventChannelSO SoundDicAudioEventChannel;
-    public AudioEventChannelSO SoundSourceAudioEventChannel;
-    public AudioEventChannelSO TuningSoundAudioEventChannel;
-    public AudioEventChannelSO WaitLoadingAudioEventChannel;*/
-
     public void PlayGuideSound(AudioInfoSO _audioInfoSO)
     {
         audioSource.clip = _audioInfoSO.audioClip;
-        //isNowGuidePlaying = true;
         audioSource?.Play();
-        //isNowGuidePlaying = false;
+
+        //if(!audioSource.isPlaying)
+        //{
+        //    StartCoroutine(waitAseconds());
+        //}
+
+        if(SceneLoader.Instance.curSceneName.Equals("HiddenSound"))
+        {
+            StartCoroutine(WaitHiddenSound());
+        }
+        else if(SceneLoader.Instance.curSceneName.Equals("TuningSound"))
+        {
+            StartCoroutine(WaitTuningSound());
+        }
+        else if(SceneLoader.Instance.curSceneName.Equals("SoundSource"))
+        {
+            StartCoroutine(WaitSSSound());
+        }
+
     }
 
     private void OnEnable()
     {
         SceneInfoAGChannel.OnAudioCue += PlayGuideSound;
 
-        /*MainAudioEventChannel.OnAudioCue += PlayGuideSound;
-        SelectGameAudioEventChannel.OnAudioCue += PlayGuideSound;
-        HiddenSoundAudioEventChannel.OnAudioCue += PlayGuideSound;
-        SoundDicAudioEventChannel.OnAudioCue += PlayGuideSound;
-        SoundSourceAudioEventChannel.OnAudioCue += PlayGuideSound;
-        TuningSoundAudioEventChannel.OnAudioCue += PlayGuideSound;
-        WaitLoadingAudioEventChannel.OnAudioCue += PlayGuideSound;*/
     }
     private void OnDisable()
     {
         SceneInfoAGChannel.OnAudioCue -= PlayGuideSound;
-        /*MainAudioEventChannel.OnAudioCue -= PlayGuideSound;
-        SelectGameAudioEventChannel.OnAudioCue -= PlayGuideSound;
-        HiddenSoundAudioEventChannel.OnAudioCue -= PlayGuideSound;
-        SoundDicAudioEventChannel.OnAudioCue -= PlayGuideSound;
-        SoundSourceAudioEventChannel.OnAudioCue -= PlayGuideSound;
-        TuningSoundAudioEventChannel.OnAudioCue -= PlayGuideSound;
-        WaitLoadingAudioEventChannel.OnAudioCue -= PlayGuideSound;*/
     }
-
+    IEnumerator WaitHiddenSound()
+    {
+        yield return new WaitForSeconds(11f);
+    }
+    IEnumerator WaitTuningSound()
+    {
+        yield return new WaitForSeconds(8f);
+    }
+    IEnumerator WaitSSSound()
+    {
+        yield return new WaitForSeconds(8f);
+    }
 }
