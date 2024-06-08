@@ -12,7 +12,7 @@ public enum MainGame
 public class SceneLoader : Singleton<SceneLoader>
 {
     public MainGame mainGame;
-    string curSceneName = "LoadingScene";
+    public string curSceneName = "LoadingScene";
     [SerializeField]
     float transitionTime = 1f;
 
@@ -47,7 +47,7 @@ public class SceneLoader : Singleton<SceneLoader>
     }
     public void SetMainGameName(string _sceneName)
     {
-        if(_sceneName.Equals("HiddenSound"))
+        if(_sceneName.Equals("s"))
             {mainGame = MainGame.hiddenSound;
             Debug.Log("숨은소리찾기게임실행중");}
         else if(_sceneName.Equals("TuningSound"))

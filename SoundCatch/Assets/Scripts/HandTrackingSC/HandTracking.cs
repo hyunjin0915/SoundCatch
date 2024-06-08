@@ -257,12 +257,6 @@ public class HandTracking : MonoBehaviour
         }
     }
 
-    // 현재 게임 설정
-    /*public void SetCurScene(MainGame gameName)
-    {
-        mainGame = gameName;
-    }
-*/
     // 현재 손 위치 정보를 viewportPoint로 변환한 값 리턴
     public Vector3 getViewportPoint()
     {
