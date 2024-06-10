@@ -25,6 +25,8 @@ public class TuningSoundManager : MonoBehaviour
 
     GameObject ht;
 
+    bool check = false;
+
     bool set = false;       // 게임 세팅용
     float startTime = 0.0f; // 시작 타이머용
     float time = 0.0f;      // 판정 타이머용
@@ -41,6 +43,19 @@ public class TuningSoundManager : MonoBehaviour
         audioSource = ht.GetComponent<AudioSource>();
         subAudioSource = ht.GetComponentInChildren<AudioSource>();
         listener = GetComponent<GameObjectEventListener>();
+
+        // 시작할 때 0~6 사이 범위 안에서 랜덤하게 스테이지 피치를 설정
+        stagePitch = UnityEngine.Random.Range(0, 6);
+        asTime = 0.0f;
+        audioSource.clip = sounds[stagePitch];
+
+        // 시작 플레이어 피치를 0('도'음)으로 지정
+        pPitch = 0;
+        subAudioSource.clip = sounds[pPitch];
+
+        // 손 위치 정보 가져오기
+        handPos = ht.GetComponent<HandTracking>().getViewportPoint();
+        handPosOld = handPos;
     }
 
     void Update()
@@ -53,7 +68,7 @@ public class TuningSoundManager : MonoBehaviour
         {
             if(set == false)
             {
-                setGame();
+                audioSource.PlayOneShot(sounds[stagePitch]);
                 set = true;
             }
 
@@ -84,26 +99,6 @@ public class TuningSoundManager : MonoBehaviour
         }        
     }
 
-    void setGame()
-    {
-        // 시작할 때 0~6 사이 범위 안에서 랜덤하게 스테이지 피치를 설정
-        stagePitch = UnityEngine.Random.Range(0, 6);
-        asTime = 0.0f;
-        audioSource.Stop();
-        audioSource.PlayOneShot(sounds[stagePitch]);
-
-        audioSource.clip = sounds[stagePitch];
-        audioSource.Play();
-
-        // 시작 플레이어 피치를 0('도'음)으로 지정
-        pPitch = 0;
-        subAudioSource.clip = sounds[pPitch];
-
-        // 손 위치 정보 가져오기
-        handPos = ht.GetComponent<HandTracking>().getViewportPoint();
-        handPosOld = handPos;
-    }
-
     public void checkAnswer()
     {
         // viewport point의 y값에 따라 피치 변경
@@ -121,11 +116,14 @@ public class TuningSoundManager : MonoBehaviour
         // 제스처 변경 체크용
         int oldGesture = gesture;
 
-
         // 주먹을 쥐었는지 여부 가져오기. 쥐었으면 1, 폈으면 0
         gesture = ht.GetComponent<HandTracking>().getGestureInfo();
+        if(oldGesture == 0 && gesture == 1)
+        {
+            check = true;
+        }
 
-        if ((gesture == 1) && (time >= 1.0f) && (pitchChange) && (oldGesture != gesture))
+        if ((gesture == 1) && (time >= 1.0f) && (pitchChange) && check)
         {
             // 피치를 맞췄다면
             if (pPitch == stagePitch)
@@ -137,6 +135,8 @@ public class TuningSoundManager : MonoBehaviour
                 }
                 subAudioSource.clip = sounds[7];
                 subAudioSource.Play();
+
+                check = false;
                 
                 // 게임 클리어 씬으로 전환
                 _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
@@ -152,6 +152,7 @@ public class TuningSoundManager : MonoBehaviour
                 subAudioSource.clip = sounds[8];
                 subAudioSource.Play();
 
+                check = false;
             }
 
             // 타이머 초기화
