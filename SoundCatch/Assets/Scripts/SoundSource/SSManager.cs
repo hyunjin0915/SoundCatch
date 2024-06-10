@@ -28,7 +28,7 @@ public class SSManager : MonoBehaviour
     
     public bool[] arrBool = new bool[4] { false, false, false, false};
 
-    private float maxSize = 10.3f;
+    public float maxSize = 5f;
     public float maxVolume = 0.8f;
 
     public Vector2 handPos;
@@ -101,7 +101,7 @@ public class SSManager : MonoBehaviour
 
     private float CalDis(Vector3 handPos)
     {
-        float dis = Vector2.Distance(this.handPos, ssPos) - 0.4f;
+        float dis = Vector2.Distance(this.handPos, ssPos);
 
         if (dis > maxSize)
         {
