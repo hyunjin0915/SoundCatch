@@ -82,6 +82,8 @@ public class HandTracking : MonoBehaviour
                 {                   
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
+                        audioSource.panStereo = 0;
+                        subAscr.panStereo = 0;
                         // 소리 출력
                         PlaySound(3.0f);
                         
@@ -94,6 +96,8 @@ public class HandTracking : MonoBehaviour
                     }
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Background")) // 인식한 오브젝트가 Background인 경우
                     {
+                        audioSource.panStereo = 0;
+                        subAscr.panStereo = 0;
                         // 소리 출력
                         PlayLoopSound();
 
@@ -121,6 +125,8 @@ public class HandTracking : MonoBehaviour
 
                                 break;
                             case MainGame.setSound: // 음 맞추기의 게임 오브젝트 인식 부분
+                                audioSource.panStereo = 0;
+                                subAscr.panStereo = 0;
 
                                 // 소리 출력
                                 // 인식한 오브젝트가 소리를 계속 반복해서 출력하면 PlayLoopSound()
@@ -137,7 +143,8 @@ public class HandTracking : MonoBehaviour
 
                                 break;
                             case MainGame.causeSound: // 소리원 찾기의 게임 오브젝트 인식 부분
-
+                                audioSource.panStereo = 0;
+                                subAscr.panStereo = 0;
                                 // 소리 출력
                                 PlayLoopSound();
                                 gameObjectFunEvent.SSRaise(handCenter);
