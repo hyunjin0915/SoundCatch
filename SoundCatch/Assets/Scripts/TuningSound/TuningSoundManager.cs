@@ -26,11 +26,12 @@ public class TuningSoundManager : MonoBehaviour
     GameObject ht;
 
     bool check = false;
+    bool start = false;
 
     bool set = false;       // 게임 세팅용
     float startTime = 0.0f; // 시작 타이머용
     float time = 0.0f;      // 판정 타이머용
-    float asTime = 0.0f;    // 스테이지 음 반복재생용
+    float asTime = 1.0f;    // 스테이지 음 반복재생용
 
     private GameObjectEventListener listener;
 
@@ -48,6 +49,7 @@ public class TuningSoundManager : MonoBehaviour
         stagePitch = UnityEngine.Random.Range(0, 6);
         asTime = 0.0f;
         audioSource.clip = sounds[stagePitch];
+        UnityEngine.Debug.Log("StagePitch : " + stagePitch);
 
         // 시작 플레이어 피치를 0('도'음)으로 지정
         pPitch = 0;
@@ -60,18 +62,25 @@ public class TuningSoundManager : MonoBehaviour
 
     void Update()
     {
-        // 음성 안내 시간 동안 멈추도록
-        if(startTime <= 8.26f)
+        if(startTime < 10.0f)
         {
             startTime += Time.deltaTime;
-        } else
+        }
+
+        // 음성 안내 시간 동안 멈추도록
+        if (startTime <= 8.3f)
+        {
+            
+        } else if(startTime > 8.3f && startTime <= 9.3f)
         {
             if(set == false)
             {
                 audioSource.PlayOneShot(sounds[stagePitch]);
                 set = true;
             }
-
+        }
+        else
+        {
             asTime += Time.deltaTime;
             if (asTime >= 5.0f)
             {
@@ -107,10 +116,17 @@ public class TuningSoundManager : MonoBehaviour
 
         if (pPitch != pPitchOld)    // 변경 시 소리 출력
         {
-            subAudioSource.Stop();
-            subAudioSource.clip = sounds[pPitch];
-            subAudioSource.Play();
-            pitchChange = true;
+            if (start == false)
+            {
+                start = true;
+            }
+            else
+            {
+                subAudioSource.Stop();
+                subAudioSource.clip = sounds[pPitch];
+                subAudioSource.Play();
+                pitchChange = true;
+            }
         }
 
         // 제스처 변경 체크용
@@ -123,7 +139,7 @@ public class TuningSoundManager : MonoBehaviour
             check = true;
         }
 
-        if ((gesture == 1) && (time >= 1.0f) && (pitchChange) && check)
+        if ((gesture == 1) && (time >= 3.0f) && (pitchChange) && check)
         {
             // 피치를 맞췄다면
             if (pPitch == stagePitch)
