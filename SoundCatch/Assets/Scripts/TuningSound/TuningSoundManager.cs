@@ -122,6 +122,8 @@ public class TuningSoundManager : MonoBehaviour
             }
             else
             {
+                audioSource.loop = false;
+
                 subAudioSource.Stop();
                 subAudioSource.clip = sounds[pPitch];
                 subAudioSource.Play();
@@ -149,8 +151,6 @@ public class TuningSoundManager : MonoBehaviour
                 {
                     subAudioSource.Stop();
                 }
-                subAudioSource.clip = sounds[7];
-                subAudioSource.Play();
 
                 check = false;
                 audioSource.loop = false;
@@ -168,6 +168,7 @@ public class TuningSoundManager : MonoBehaviour
                 }
                 subAudioSource.clip = sounds[8];
                 subAudioSource.Play();
+                audioSource.loop = false;
 
                 check = false;
             }
