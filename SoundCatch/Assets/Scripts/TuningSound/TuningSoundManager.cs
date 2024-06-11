@@ -153,6 +153,7 @@ public class TuningSoundManager : MonoBehaviour
                 subAudioSource.Play();
 
                 check = false;
+                audioSource.loop = false;
                 
                 // 게임 클리어 씬으로 전환
                 _ClickRightBlockEC.RaisePlayAudio(_ClickRightBlock);
