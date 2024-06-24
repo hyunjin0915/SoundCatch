@@ -56,37 +56,43 @@ public class HandTracking : MonoBehaviour
     {
         string data = UDPReceive.instance.data; // 인식 데이터 받기
 
-        if (data != "")
+        if (!data.Equals("true") && !data.Equals("out")) // 인식 데이터가 좌표일 경우
         {
-            if (!data.Equals("true")) // 인식 데이터가 좌표일 경우
+            // 인식 데이터 전처리
+            data = data.Remove(0, 1);
+            data = data.Remove(data.Length - 1, 1);
+            string[] points = data.Split(',');
+
+            // 인식 좌표의 중간 좌표 가져오기(레이 발사할 부분만 가져오기)
+            x = 7 - float.Parse(points[27]) / 100;
+            y = float.Parse(points[28]) / 100;
+            z = float.Parse(points[29]) / 100;
+
+            // 손 모양 가져오기
+            float handG = float.Parse(points[63]);
+            handGesture = (HandGesture)((int)handG);
+
+            // 거리 제한 가져오기
+            int dis = int.Parse(points[64]);
+
+            if (dis == 0)
             {
-                // 인식 데이터 전처리
-                data = data.Remove(0, 1);
-                data = data.Remove(data.Length - 1, 1);
-                string[] points = data.Split(',');
+                Debug.Log("안정");
 
-                // 인식 좌표의 중간 좌표 가져오기(레이 발사할 부분만 가져오기)
-                x = 7 - float.Parse(points[27]) / 100;
-                y = float.Parse(points[28]) / 100;
-                z = float.Parse(points[29]) / 100;
-
-                // 손 모양 가져오기
-                float handG = float.Parse(points[63]);
-                handGesture = (HandGesture)((int)handG);
 
                 Vector3 handCenter = new Vector3(x, y, z);
 
                 Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // 임시 레이어 표시
 
-                if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer) && !audioGuideManager.audioSource.isPlaying) 
-                {                   
+                if (Physics.Raycast(handCenter, Vector3.forward, out hit, 300.0f, bLayer | uLayer | gLayer) && !audioGuideManager.audioSource.isPlaying)
+                {
                     if (hit.collider.gameObject.layer == LayerMask.NameToLayer("UI")) // 인식한 오브젝트가 UI인 경우
                     {
                         audioSource.panStereo = 0;
                         subAscr.panStereo = 0;
                         // 소리 출력
                         PlaySound(3.0f);
-                        
+
                         // UI 3초 주먹 인식
                         if (CognizeHandGesture(handGesture, 3.0f))
                         {
@@ -165,13 +171,32 @@ public class HandTracking : MonoBehaviour
                     preHit = hit.transform.gameObject;
                 }
             }
-            else // 인식 데이터가 true일 경우 => 파이썬 파일이 실행되었을 때의 타이밍을 위한 조건
+            else if (dis == 1)
             {
-                if (!isCameraOn) {
-                    SceneLoader.Instance.ChangeScene("Explanation");
-                    isCameraOn = true;
-                }
+                Debug.Log("너무 가까움");
+
+                // 손이 너무 가깝다는 음성 추가
             }
+            else if (dis == 2)
+            {
+                Debug.Log("너무 멂");
+
+                // 손이 너무 멀다는 음성 추가
+            }
+            
+        }
+        else if (data.Equals("true")) // 인식 데이터가 true일 경우 => 파이썬 파일이 실행되었을 때의 타이밍을 위한 조건
+        {
+            if (!isCameraOn)
+            {
+                SceneLoader.Instance.ChangeScene("Explanation");
+                isCameraOn = true;
+            }
+        }
+        else if (data.Equals("out")) // 인식 데이터가 out 일 경우
+        {
+            Debug.Log("out");
+            // 후에 인식이 잘 안되고 있다는 음성 등 추가
         }
     }
 

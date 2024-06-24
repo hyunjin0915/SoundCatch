@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.451401, g: 0.5008942, b: 0.5723129, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -871,6 +871,7 @@ MonoBehaviour:
   sdPos: {x: 0, y: 0}
   playgroundS: {fileID: 913195500}
   arrBool: 00000000
+  maxSize: 5
   maxVolume: 0.8
   handPos: {x: 0, y: 0}
   noise: {fileID: 8300000, guid: 2ed5389953353224c91f71318a9c402e, type: 3}
