@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-enum HandGesture
+public enum HandGesture
 {
     paper, // 손바닥
     rock, // 주먹
@@ -56,7 +56,7 @@ public class HandTracking : MonoBehaviour
     {
         string data = UDPReceive.instance.data; // 인식 데이터 받기
 
-        if (!data.Equals("true") && !data.Equals("out")) // 인식 데이터가 좌표일 경우
+        if (data != "" &&!data.Equals("true") && !data.Equals("out")) // 인식 데이터가 좌표일 경우
         {
             // 인식 데이터 전처리
             data = data.Remove(0, 1);
@@ -148,10 +148,11 @@ public class HandTracking : MonoBehaviour
                                 }
 
                                 break;
-                            case MainGame.causeSound: // 소리원 찾기의 게임 오브젝트 인식 부분
+                            case MainGame.memorize: // 소리원 찾기의 게임 오브젝트 인식 부분
                                 audioSource.panStereo = 0;
                                 subAscr.panStereo = 0;
-                                // 소리 출력
+
+                                /*// 소리 출력
                                 PlayLoopSound();
                                 gameObjectFunEvent.SSRaise(handCenter);
 
@@ -162,7 +163,7 @@ public class HandTracking : MonoBehaviour
                                     subAscr.Stop();
                                     // 게임 오브젝트의 경우 해당 오브젝트가 선택되었을 때
                                     gameObjectFunEvent.Raise(sound.objectNum);
-                                }
+                                }*/
 
                                 break;
                         }
@@ -227,7 +228,33 @@ public class HandTracking : MonoBehaviour
 
         return rockFinish;
     }
-    
+
+    // 손 모양 인식
+    public bool CognizeHandGesture(HandGesture hand, HandGesture checkHand, float timer)
+    {
+        bool rockFinish = false;
+
+        if (hand == checkHand)
+        {
+            isHandRock = true;
+
+            // 초 인식
+            rockTime += Time.deltaTime;
+
+            if (rockTime >= timer)
+            {
+                rockFinish = true;
+                rockTime = 0.0f;
+            }
+        } else
+        {
+            isHandRock = false;
+            rockTime = 0.0f;
+        }
+
+        return rockFinish;
+    }
+
     // 소리 출력(GameObject, Background와 같이 계속 반복해서 들려주는 오디오)
     private void PlayLoopSound()
     {

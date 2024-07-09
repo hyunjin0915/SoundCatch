@@ -16,7 +16,7 @@ public class GameClearMenu : MonoBehaviour
         }
         else
         {
-            SceneLoader.Instance.ChangeScene("SoundSource");
+            SceneLoader.Instance.ChangeScene("Memorize");
         }
     }
 
