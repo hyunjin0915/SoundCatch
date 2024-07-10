@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 108c6bc71a3210c42b5265c22dadf910, type: 3}
-  m_Name: ExplainAGInfo
+  m_Name: Explain_Rock
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 7ab1b274e57ba8843b4489612a42140c, type: 3}
+  audioClip: {fileID: 8300000, guid: e802823813487fc4c90e4befa3876069, type: 3}

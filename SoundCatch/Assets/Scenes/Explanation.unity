@@ -290,6 +290,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _curSceneAudioGuide: {fileID: 11400000, guid: 4adb0f82a157d9f46ae0e97c76b4bb98, type: 2}
+  paper_AudioGuide: {fileID: 11400000, guid: 1e8b2ae8117f6a2438ed86f5b76848fe, type: 2}
+  rock_AudioGuide: {fileID: 11400000, guid: c532b388415c48645993b39ca5ce6ab9, type: 2}
+  v_AudioGuide: {fileID: 11400000, guid: 02e978b2b86f8444f895c5cf02c08007, type: 2}
   _curSceneAudioEventChannel: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
 --- !u!1 &1491761053
 GameObject:

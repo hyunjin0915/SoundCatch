@@ -77,7 +77,7 @@ public class HandTracking : MonoBehaviour
 
             if (dis == 0)
             {
-                Debug.Log("안정");
+                //Debug.Log("안정");
 
 
                 Vector3 handCenter = new Vector3(x, y, z);
@@ -174,13 +174,13 @@ public class HandTracking : MonoBehaviour
             }
             else if (dis == 1)
             {
-                Debug.Log("너무 가까움");
+                //Debug.Log("너무 가까움");
 
                 // 손이 너무 가깝다는 음성 추가
             }
             else if (dis == 2)
             {
-                Debug.Log("너무 멂");
+                //Debug.Log("너무 멂");
 
                 // 손이 너무 멀다는 음성 추가
             }
