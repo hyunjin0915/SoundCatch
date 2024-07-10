@@ -81,6 +81,9 @@ public class Memorize : MonoBehaviour
 
     IEnumerator PlayTest(int[] soundArr) // 외워야 할 사운드 재생
     {
+        PlayAudio(testStart);
+        yield return new WaitForSeconds(1.5f);
+
         for (int i = 0; i < soundArr.Length; i++)
         {
             PlayAudio(clips[soundArr[i]]);
@@ -91,7 +94,7 @@ public class Memorize : MonoBehaviour
 
     IEnumerator Countdown()
     {
-        yield return new WaitForSeconds(1.0f); // 시작 사운드 사이즈 보고 판단
+        yield return new WaitForSeconds(1.5f); // 시작 사운드 사이즈 보고 판단
         PlayAudio(countdownClip[0]);
         yield return new WaitForSeconds(1.0f);
         PlayAudio(countdownClip[0]);

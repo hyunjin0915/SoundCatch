@@ -499,12 +499,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: b41dd66f8a793ad4eb7a23ef73f4affd, type: 3}
-  - {fileID: 8300000, guid: d445083804428924b94ccc4aaed25cb9, type: 3}
-  - {fileID: 8300000, guid: bfb6a3a9342466b4299ebae8f103e475, type: 3}
+  - {fileID: 8300000, guid: 37a545a37af98bc45907d73a483a9259, type: 3}
+  - {fileID: 8300000, guid: 9a2fdc913e260f245b26c9ca94b25d5e, type: 3}
+  - {fileID: 8300000, guid: a257e15384423c144a72436581b5e56e, type: 3}
   resultClips: []
-  testStart: {fileID: 8300000, guid: 051b31f8ae158774ba4178f41947a9e8, type: 3}
-  answerStart: {fileID: 8300000, guid: 051b31f8ae158774ba4178f41947a9e8, type: 3}
+  testStart: {fileID: 8300000, guid: 9b138c94bca6218449ec5254d5217290, type: 3}
+  answerStart: {fileID: 8300000, guid: 72b4f1c28e8e3204aa597c1bab742c5c, type: 3}
   completeClip: {fileID: 8300000, guid: b136fd43affc4274b9469314d3896bae, type: 3}
   bingoClip: {fileID: 8300000, guid: 0f5a6d414d192f34d8dc04139b368228, type: 3}
   failClip: {fileID: 8300000, guid: 032de7df7c852c348b67d5305c9ec28a, type: 3}
