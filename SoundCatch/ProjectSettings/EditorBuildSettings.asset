@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 9ceebd54aed3351469ee30b8e893d5cd
+  - enabled: 1
+    path: Assets/Scenes/TuningSoundNew.unity
+    guid: e8e246f5e969e2541ba846b4f96f8b11
   m_configObjects: {}

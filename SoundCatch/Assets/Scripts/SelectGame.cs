@@ -11,7 +11,7 @@ public class SelectGame : MonoBehaviour
 
     public void ClickButton1()//음 맞추기
     {
-        SceneLoader.Instance.ChangeScene("TuningSound");
+        SceneLoader.Instance.ChangeScene("TuningSoundNew");
     }
     public void ClickButton2()//소리원 찾기
     {

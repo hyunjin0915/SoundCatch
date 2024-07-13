@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: handImage
+    uniqueID: 1718509919
+    locked: 0

@@ -7,7 +7,8 @@ public enum MainGame
 {
     hiddenSound, // 숨은 소리 찾기
     setSound, // 음 맞추기
-    memorize // 소리원 찾기
+    memorize, // 소리원 찾기
+    tuningSoundNew // 음 맞추기 신규 버전
 }
 public class SceneLoader : Singleton<SceneLoader>
 {
@@ -52,6 +53,8 @@ public class SceneLoader : Singleton<SceneLoader>
             Debug.Log("숨은소리찾기게임실행중");}
         else if(_sceneName.Equals("TuningSound"))
             mainGame = MainGame.setSound;
+        else if (_sceneName.Equals("TuningSoundNew"))
+            mainGame = MainGame.tuningSoundNew;
         else if(_sceneName.Equals("Memorize"))
             mainGame = MainGame.memorize;
     }

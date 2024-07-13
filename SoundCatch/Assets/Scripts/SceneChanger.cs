@@ -19,7 +19,7 @@ public class SceneChanger : MonoBehaviour
         }
         else if(Input.GetMouseButtonDown(1))
         {
-            SceneLoader.Instance.ChangeScene("SoundSource");
+            SceneLoader.Instance.ChangeScene("TuningSoundNew");
         }
     }
 }
