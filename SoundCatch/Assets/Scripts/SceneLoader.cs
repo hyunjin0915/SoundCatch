@@ -55,7 +55,7 @@ public class SceneLoader : Singleton<SceneLoader>
             mainGame = MainGame.setSound;
         else if (_sceneName.Equals("TuningSoundNew"))
             mainGame = MainGame.tuningSoundNew;
-        else if(_sceneName.Equals("Memorize"))
+        else if(_sceneName.Equals("MemorizeLevel1"))
             mainGame = MainGame.memorize;
     }
 }
