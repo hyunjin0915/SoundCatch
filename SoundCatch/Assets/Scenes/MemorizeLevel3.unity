@@ -498,6 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa2b436ebb0593d4fb0dae1609789d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: 7
   clips:
   - {fileID: 8300000, guid: 37a545a37af98bc45907d73a483a9259, type: 3}
   - {fileID: 8300000, guid: 9a2fdc913e260f245b26c9ca94b25d5e, type: 3}

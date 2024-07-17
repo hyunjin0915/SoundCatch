@@ -15,6 +15,6 @@ public class SelectGame : MonoBehaviour
     }
     public void ClickButton2()//소리원 찾기
     {
-        SceneLoader.Instance.ChangeScene("Memorize");
+        SceneLoader.Instance.ChangeScene("MemorizeLevel1");
     }
 }

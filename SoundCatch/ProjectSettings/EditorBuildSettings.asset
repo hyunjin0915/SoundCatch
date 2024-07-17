@@ -42,8 +42,14 @@ EditorBuildSettings:
     path: Assets/Scenes/TuningSound.unity
     guid: bd2d1477abe4d02418d3b665890b65af
   - enabled: 1
-    path: Assets/Scenes/Memorize.unity
+    path: Assets/Scenes/MemorizeLevel1.unity
     guid: 773de1cf33a573342830989536daacb8
+  - enabled: 1
+    path: Assets/Scenes/MemorizeLevel2.unity
+    guid: b0b27cd71492fcc46beccd76f3e74144
+  - enabled: 1
+    path: Assets/Scenes/MemorizeLevel3.unity
+    guid: 941613431ef512249b495b9e2ea89ef4
   - enabled: 1
     path: Assets/Scenes/YeonA.unity
     guid: e15a813ad9320af47bb805aa3dd05ce4

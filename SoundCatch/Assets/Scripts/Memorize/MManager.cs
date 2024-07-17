@@ -7,6 +7,8 @@ public class Memorize : MonoBehaviour
     private HandTracking hT;
     private AudioSource audioSource;
 
+    public int count;
+
     public AudioClip[] clips; // 0 : open 1: close 2 : scissor
     public AudioClip[] resultClips; // 0 : 정답 1 : 실패
     public AudioClip testStart; // 기억하세요 같은 문구
@@ -16,8 +18,8 @@ public class Memorize : MonoBehaviour
     public AudioClip failClip; // 실패
     public AudioClip[] countdownClip;
 
-    private int[] level_1 = new int[3];
-    private int[] level_2 = new int[5];
+    private int[] level_1 = new int[7];
+    private int[] level_2 = new int[7];
     private int[] level_3 = new int[7];
     
     // Start is called before the first frame update
@@ -30,21 +32,11 @@ public class Memorize : MonoBehaviour
         audioSource.volume = 0.8f;
         audioSource.loop = false;
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < count; i++)
         {
-            if (i < 3)
-            {
-                level_1[i] = Random.Range(0, 3);
-                level_2[i] = Random.Range(0, 3);
-                level_3[i] = Random.Range(0, 3);
-            } else if (i < 5)
-            {
-                level_2[i] = Random.Range(0, 3);
-                level_3[i] = Random.Range(0, 3);
-            } else if (i < 7)
-            {
-                level_3[i] = Random.Range(0, 3);
-            }
+            level_1[i] = Random.Range(0, 3);
+            level_2[i] = Random.Range(0, 3);
+            level_3[i] = Random.Range(0, 3);
         }
 
         Invoke("StartGameCor", 8.5f);
@@ -59,7 +51,7 @@ public class Memorize : MonoBehaviour
     {
         yield return StartCoroutine(PlayTest(soundArr));
         PlayAudio(answerStart);
-        for (int i = 0; i < soundArr.Length; i++)
+        for (int i = 0; i < count; i++)
         {
             yield return StartCoroutine(Countdown()); // 카운트다운
             if (hT.getGestureInfo() == soundArr[i]) // 정답
@@ -75,7 +67,7 @@ public class Memorize : MonoBehaviour
             }
         }
 
-        yield break;
+        yield return new WaitForSeconds(0.5f);
     }
 
 
@@ -84,12 +76,12 @@ public class Memorize : MonoBehaviour
         PlayAudio(testStart);
         yield return new WaitForSeconds(1.5f);
 
-        for (int i = 0; i < soundArr.Length; i++)
+        for (int i = 0; i < count; i++)
         {
             PlayAudio(clips[soundArr[i]]);
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(1.5f);
         }
-        yield break;
+        yield return new WaitForSeconds(0.5f);
     }
 
     IEnumerator Countdown()
