@@ -8,7 +8,6 @@ public class GameObjectEventListener : MonoBehaviour
     public UnityEvent<int> Response;
 
     public UnityEvent<Vector3> ssResponse;
-    public UnityEvent tsResponse;
 
     public void OnEventRaised(int objectIndex)
     {
@@ -29,11 +28,5 @@ public class GameObjectEventListener : MonoBehaviour
     public void OnSSEventRaised(Vector3 handPos)
     {
         ssResponse.Invoke(handPos);
-    }
-
-    // 음 맞추기 게임에서 필요해서 추가
-    public void OnTSEventRaised()
-    {
-        tsResponse.Invoke();
     }
 }

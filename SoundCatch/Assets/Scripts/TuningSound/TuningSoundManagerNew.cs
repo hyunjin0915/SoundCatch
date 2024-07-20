@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TuningSoundManagerNew : MonoBehaviour
 {
     int stagePitch;
+    int stageLv;
+    Scene scene;
 
     public AudioSource audioSource;
     public AudioSource subAudioSource;
@@ -28,10 +31,30 @@ public class TuningSoundManagerNew : MonoBehaviour
         audioSource = ht.GetComponent<AudioSource>();
         subAudioSource = ht.GetComponentInChildren<AudioSource>();
 
-        // 시작할 때 0~6 사이 범위 안에서 랜덤하게 스테이지 피치를 설정
-        stagePitch = UnityEngine.Random.Range(0, 6);
+        // 현재 난이도에 따른 스테이지 피치 설정
+        scene = SceneManager.GetActiveScene();
+        if (SceneLoader.Instance.mainGame == MainGame.tuningSoundNew1)
+        {
+            stageLv = 1;
+            stagePitch = UnityEngine.Random.Range(0, 4);
+        }
+        else if (SceneLoader.Instance.mainGame == MainGame.tuningSoundNew2)
+        {
+            stageLv = 2;
+            stagePitch = UnityEngine.Random.Range(0, 6);
+        }
+        else if (SceneLoader.Instance.mainGame == MainGame.tuningSoundNew3)
+        {
+            stageLv = 3;
+            stagePitch = UnityEngine.Random.Range(0, 11);
+        }
+        else
+        {
+            Debug.Log("Error");
+            stagePitch = 0;
+        }
+
         asTime = -3.5f;
-        audioSource.clip = sounds[stagePitch];
         // 시작 플레이어 피치를 0('도'음)으로 지정
         // pPitch = 0;
     }

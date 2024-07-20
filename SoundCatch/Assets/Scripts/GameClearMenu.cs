@@ -10,9 +10,9 @@ public class GameClearMenu : MonoBehaviour
         {
             SceneLoader.Instance.ChangeScene("HiddenSound");
         }
-        else if(SceneLoader.Instance.mainGame == MainGame.tuningSoundNew)
+        else if(SceneLoader.Instance.mainGame == MainGame.tuningSoundNew1)
         {
-            SceneLoader.Instance.ChangeScene("TuningSoundNew");
+            SceneLoader.Instance.ChangeScene("TuningSoundNew1");
         }
         else
         {

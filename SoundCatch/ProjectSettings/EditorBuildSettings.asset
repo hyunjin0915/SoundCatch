@@ -38,7 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SoundSource.unity
     guid: d7b50e659beee1d42aeba6403294edd3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TuningSound.unity
     guid: bd2d1477abe4d02418d3b665890b65af
   - enabled: 1
@@ -54,9 +54,15 @@ EditorBuildSettings:
     path: Assets/Scenes/YeonA.unity
     guid: e15a813ad9320af47bb805aa3dd05ce4
   - enabled: 1
+    path: Assets/Scenes/TuningSoundNew1.unity
+    guid: 21502eeecbef4cc488d4d4e9d893f810
+  - enabled: 1
+    path: Assets/Scenes/TuningSoundNew2.unity
+    guid: e8e246f5e969e2541ba846b4f96f8b11
+  - enabled: 1
+    path: Assets/Scenes/TuningSoundNew3.unity
+    guid: bfd47991a8f9d4b4fa499afe5f83ef2e
+  - enabled: 1
     path: Assets/Scenes/GameClear.unity
     guid: 9ceebd54aed3351469ee30b8e893d5cd
-  - enabled: 1
-    path: Assets/Scenes/TuningSoundNew.unity
-    guid: e8e246f5e969e2541ba846b4f96f8b11
   m_configObjects: {}

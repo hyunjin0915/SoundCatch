@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public enum MainGame
 {
     hiddenSound, // 숨은 소리 찾기
-    setSound, // 음 맞추기
     memorize, // 소리원 찾기
-    tuningSoundNew // 음 맞추기 신규 버전
+    tuningSoundNew1, // 음 맞추기 1단계
+    tuningSoundNew2, // 음 맞추기 1단계
+    tuningSoundNew3 // 음 맞추기 1단계
 }
 public class SceneLoader : Singleton<SceneLoader>
 {
@@ -51,10 +52,12 @@ public class SceneLoader : Singleton<SceneLoader>
         if(_sceneName.Equals("s"))
             {mainGame = MainGame.hiddenSound;
             Debug.Log("숨은소리찾기게임실행중");}
-        else if(_sceneName.Equals("TuningSound"))
-            mainGame = MainGame.setSound;
-        else if (_sceneName.Equals("TuningSoundNew"))
-            mainGame = MainGame.tuningSoundNew;
+        else if (_sceneName.Equals("TuningSoundNew1"))
+            mainGame = MainGame.tuningSoundNew1;
+        else if (_sceneName.Equals("TuningSoundNew2"))
+            mainGame = MainGame.tuningSoundNew2;
+        else if (_sceneName.Equals("TuningSoundNew3"))
+            mainGame = MainGame.tuningSoundNew3;
         else if(_sceneName.Equals("MemorizeLevel1"))
             mainGame = MainGame.memorize;
     }
