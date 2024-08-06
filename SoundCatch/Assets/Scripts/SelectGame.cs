@@ -6,7 +6,7 @@ public class SelectGame : MonoBehaviour
 {
     public void ClickButton0() //숨은 소리 찾기
     {
-        SceneLoader.Instance.ChangeScene("HiddenSound");
+        SceneLoader.Instance.ChangeScene("HiddenSound1");
     }
 
     public void ClickButton1()//음 맞추기

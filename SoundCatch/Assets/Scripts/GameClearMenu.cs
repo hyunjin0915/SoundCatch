@@ -6,9 +6,9 @@ public class GameClearMenu : MonoBehaviour
 {
     public void ClickButton0() //다시하기 선택
     {
-        if(SceneLoader.Instance.mainGame == MainGame.hiddenSound)
+        if((SceneLoader.Instance.mainGame == MainGame.hiddenSound1) || (SceneLoader.Instance.mainGame == MainGame.hiddenSound2) || (SceneLoader.Instance.mainGame == MainGame.hiddenSound3))
         {
-            SceneLoader.Instance.ChangeScene("HiddenSound");
+            SceneLoader.Instance.ChangeScene("HiddenSound1");
         }
         else if(SceneLoader.Instance.mainGame == MainGame.tuningSoundNew1)
         {
