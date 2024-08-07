@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public enum MainGame
 {
+    hiddenSound,
     hiddenSound1, // 숨은 소리 찾기
     hiddenSound2, // 숨은 소리 찾기
     hiddenSound3, // 숨은 소리 찾기
-    memorize, // 소리원 찾기
+    memorize,
+    memorizeLevel1, // 소리원 찾기
+    memorizeLevel2, // 소리원 찾기
+    memorizeLevel3, // 소리원 찾기
+    tuningSound,
     tuningSoundNew1, // 음 맞추기 1단계
     tuningSoundNew2, // 음 맞추기 1단계
     tuningSoundNew3 // 음 맞추기 1단계
@@ -30,7 +35,11 @@ public class SceneLoader : Singleton<SceneLoader>
         {
             SetMainGameName(_sceneName);
         }
-        if(!curSceneName.Equals("HandTracking"))
+        if (curSceneName.Equals("SelectLevel"))
+        {
+            SetMainGameName(_sceneName);
+        }
+        if (!curSceneName.Equals("HandTracking"))
         {
             SceneManager.UnloadSceneAsync(curSceneName);
         }
@@ -64,6 +73,16 @@ public class SceneLoader : Singleton<SceneLoader>
         else if (_sceneName.Equals("TuningSoundNew3"))
             mainGame = MainGame.tuningSoundNew3;
         else if(_sceneName.Equals("MemorizeLevel1"))
+            mainGame = MainGame.memorizeLevel1;
+        else if (_sceneName.Equals("MemorizeLevel2"))
+            mainGame = MainGame.memorizeLevel2;
+        else if (_sceneName.Equals("MemorizeLevel3"))
+            mainGame = MainGame.memorizeLevel3;
+        else if (_sceneName.Equals("hiddenSound"))
+            mainGame = MainGame.hiddenSound;
+        else if (_sceneName.Equals("tuningSound"))
+            mainGame = MainGame.tuningSound;
+        else if (_sceneName.Equals("memorize"))
             mainGame = MainGame.memorize;
     }
 }

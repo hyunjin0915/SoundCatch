@@ -113,7 +113,7 @@ public class HandTracking : MonoBehaviour
                         // 게임 구분
                         switch (SceneLoader.Instance.mainGame)
                         {
-                            case MainGame.hiddenSound: // 숨은 소리 찾기의 게임 오브젝트 인식 부분
+                            case MainGame.hiddenSound1: // 숨은 소리 찾기의 게임 오브젝트 인식 부분
 
                                 // 소리 출력
                                 // 인식한 오브젝트가 소리를 계속 반복해서 출력하면 PlayLoopSound()
@@ -130,7 +130,10 @@ public class HandTracking : MonoBehaviour
                                 }
 
                                 break;
-                            case MainGame.memorize: // 소리원 찾기의 게임 오브젝트 인식 부분
+                            // 소리원 찾기의 게임 오브젝트 인식 부분
+                            case MainGame.memorizeLevel1:
+                            case MainGame.memorizeLevel2:
+                            case MainGame.memorizeLevel3:
                                 audioSource.panStereo = 0;
                                 subAscr.panStereo = 0;
 

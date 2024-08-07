@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectGame.unity
     guid: e75885c47b34bf543acbd1bbc0d67fff
   - enabled: 1
+    path: Assets/Scenes/SelectLevel.unity
+    guid: 7c1b2bd9f8cd0f34a94a0076242b43fd
+  - enabled: 1
     path: Assets/Scenes/SoundSource.unity
     guid: d7b50e659beee1d42aeba6403294edd3
   - enabled: 0
