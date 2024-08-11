@@ -25,6 +25,7 @@ public class HandTracking : MonoBehaviour
     private RaycastHit hit;
     public GameObject preHit;
     private bool isHandRock = false; // 손 모양이 주먹인가
+    private bool isHandScissors = false;
     private HandGesture handGesture;    // 손 모양. getGestureInfo()에 필요해 저장하도록 변경
     // 손 인식 중심 좌표
     private float x;
@@ -32,6 +33,7 @@ public class HandTracking : MonoBehaviour
     private float z;
     // 인식 타이머
     private float rockTime = 0.0f;
+    private float scissorTime = 0.0f;
 
     // 오디오
     public AudioSource audioSource;
@@ -96,9 +98,17 @@ public class HandTracking : MonoBehaviour
                         // UI 3초 주먹 인식
                         if (CognizeHandGesture(handGesture, 3.0f))
                         {
-                            // UI 오브젝트의 경우 해당 오브젝트가 선택되었을 때
-                            uiFunEvent.Raise(sound.objectNum);
+                            if(handGesture == HandGesture.rock)
+                            {
+                                // UI 오브젝트의 경우 해당 오브젝트가 선택되었을 때
+                                uiFunEvent.Raise(sound.objectNum);
+                            }
+                            else if(handGesture == HandGesture.scissors)
+                            {
+                                uiFunEvent.Raise(sound.objectNum+3);
+                            }
                         }
+                        
                     }
                     else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Background")) // 인식한 오브젝트가 Background인 경우
                     {
@@ -207,10 +217,10 @@ public class HandTracking : MonoBehaviour
     private bool CognizeHandGesture(HandGesture hand, float timer)
     {
         bool rockFinish = false;
-        
         switch (hand)
         {
             case HandGesture.rock:
+            case HandGesture.scissors:
                 isHandRock = true;
 
                 // 초 인식

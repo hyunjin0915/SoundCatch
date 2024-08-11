@@ -597,18 +597,18 @@ PrefabInstance:
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioGuide
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 499c3c3c3a3ed2e4bab4a7e04451ad28, type: 2}
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioEventChannel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
     - target: {fileID: 5190315182973107867, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: m_Name
-      value: VoiceGuider (1)
+      value: VoiceGuider
       objectReference: {fileID: 0}
     - target: {fileID: 5190315182973107867, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7422906172672111868, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: m_LocalPosition.x
@@ -843,7 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNum: 0
-  cubeSound: {fileID: 8300000, guid: 83dd0bc5ed20a5a459e4afafe6f78b2d, type: 3}
+  cubeSound: {fileID: 8300000, guid: 5c47a20a6aa5e6f49ad27b9736ab8bd8, type: 3}
   isSub: 0
   subSound: {fileID: 0}
   volume: 0.8
@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNum: 2
-  cubeSound: {fileID: 8300000, guid: d92845aa497e1684bb4fdd91bdfb858c, type: 3}
+  cubeSound: {fileID: 8300000, guid: 7b2329830e45d094b8c49d5f13811fbc, type: 3}
   isSub: 0
   subSound: {fileID: 0}
   volume: 0.8
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNum: 1
-  cubeSound: {fileID: 8300000, guid: 8fe844174bdd56243b87b133bfe61c18, type: 3}
+  cubeSound: {fileID: 8300000, guid: df9a3ca3e0e261742862388b633713d8, type: 3}
   isSub: 0
   subSound: {fileID: 0}
   volume: 0.8

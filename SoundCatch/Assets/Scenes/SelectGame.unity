@@ -153,6 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78529daf65f991469ce766c41685b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _curSceneAudioEventChannel: {fileID: 11400000, guid: 37ab813487d2da246a9319c50eba9f93, type: 2}
+  _curSceneAudioGuide: {fileID: 11400000, guid: 41581da14ab3e7040919c3ac027a958a, type: 2}
+  hiddenSound_AudioGuide: {fileID: 11400000, guid: 4199bc21578b4724b91acd5c369254e5, type: 2}
+  tuningSound_AudioGuide: {fileID: 11400000, guid: 5e234cb5697b3434995bb7d4d6f4424d, type: 2}
+  memorize_AudioGuide: {fileID: 11400000, guid: aec8166f58c156b439da30b61f100e49, type: 2}
 --- !u!114 &147019078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +205,48 @@ MonoBehaviour:
       - m_Target: {fileID: 147019077}
         m_TargetAssemblyTypeName: SelectGame, Assembly-CSharp
         m_MethodName: ClickButton2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 147019077}
+        m_TargetAssemblyTypeName: SelectGame, Assembly-CSharp
+        m_MethodName: ExplainBtn1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 147019077}
+        m_TargetAssemblyTypeName: SelectGame, Assembly-CSharp
+        m_MethodName: ExplainBtn2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 147019077}
+        m_TargetAssemblyTypeName: SelectGame, Assembly-CSharp
+        m_MethodName: ExplainBtn3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -770,7 +817,7 @@ GameObject:
   - component: {fileID: 778788200}
   - component: {fileID: 778788198}
   m_Layer: 5
-  m_Name: SoundSourceBox
+  m_Name: MemorizeSoundBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,7 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectNum: 2
-  cubeSound: {fileID: 8300000, guid: d92845aa497e1684bb4fdd91bdfb858c, type: 3}
+  cubeSound: {fileID: 8300000, guid: 6a6b6b4c954cc0144abf0c4108fb174f, type: 3}
   isSub: 0
   subSound: {fileID: 0}
   volume: 0.8
