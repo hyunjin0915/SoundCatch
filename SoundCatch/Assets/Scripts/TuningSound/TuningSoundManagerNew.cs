@@ -8,6 +8,8 @@ public class TuningSoundManagerNew : MonoBehaviour
     int stagePitch;
     int stageLv;
     Scene scene;
+    int levelNum;
+
 
     public AudioSource audioSource;
     public AudioSource subAudioSource;

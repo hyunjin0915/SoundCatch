@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class mainMenuTest : MonoBehaviour
 {
-    public void ClickButton0() //소리도감선택
+    public void ClickButton0() //게임설정
     {
-        SceneLoader.Instance.ChangeScene("SoundDicBox");
+        SceneLoader.Instance.ChangeScene("Setting");
     }
 
     public void ClickButton1()//게임시작선택
