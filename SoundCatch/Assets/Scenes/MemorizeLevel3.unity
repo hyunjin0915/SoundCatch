@@ -805,7 +805,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2057571447
+--- !u!1001 &1688299534
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -816,7 +816,7 @@ PrefabInstance:
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioGuide
       value: 
-      objectReference: {fileID: 11400000, guid: 1a6d0e07b12569c4fad5691d147081fb, type: 2}
+      objectReference: {fileID: 11400000, guid: aec8166f58c156b439da30b61f100e49, type: 2}
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioEventChannel
       value: 
@@ -877,5 +877,5 @@ SceneRoots:
   - {fileID: 725078780}
   - {fileID: 185348192}
   - {fileID: 1479190269}
-  - {fileID: 2057571447}
   - {fileID: 1650886632}
+  - {fileID: 1688299534}
