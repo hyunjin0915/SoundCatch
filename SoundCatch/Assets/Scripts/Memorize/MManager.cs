@@ -61,9 +61,9 @@ public class Memorize : MonoBehaviour
             } else // 정답이 아닐 경우
             {
                 PlayAudio(failClip);
-                // 게임 오버로 게임 클리어 씬으로 이동
+                // 게임 오버로 게임 오버 씬으로 이동
                 yield return new WaitForSeconds(1.0f);
-                SceneLoader.Instance.ChangeScene("GameClear");
+                SceneLoader.Instance.ChangeScene("GameOver");
             }
         }
 
