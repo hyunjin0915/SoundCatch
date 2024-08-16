@@ -816,7 +816,7 @@ PrefabInstance:
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioGuide
       value: 
-      objectReference: {fileID: 11400000, guid: aec8166f58c156b439da30b61f100e49, type: 2}
+      objectReference: {fileID: 11400000, guid: 8f47fb4990f80314ba5abe11023dbf55, type: 2}
     - target: {fileID: 216094464439637863, guid: 2de4ce81d7ea6dd43b91a5f74e182528, type: 3}
       propertyPath: _curSceneAudioEventChannel
       value: 
