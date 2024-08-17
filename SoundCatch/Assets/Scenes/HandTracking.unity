@@ -473,6 +473,8 @@ MonoBehaviour:
   preHit: {fileID: 0}
   audioSource: {fileID: 721759277}
   subAscr: {fileID: 530807001}
+  tooClose: {fileID: 8300000, guid: 58e01454b3ba4b14dab89a1f5fd39bd3, type: 3}
+  tooFar: {fileID: 8300000, guid: 2ed24f2f00e24fd47bea23a75ba734bd, type: 3}
 --- !u!82 &721759277
 AudioSource:
   m_ObjectHideFlags: 0

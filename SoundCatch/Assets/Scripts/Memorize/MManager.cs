@@ -5,7 +5,9 @@ using UnityEngine;
 public class Memorize : MonoBehaviour
 {
     private HandTracking hT;
+    [SerializeField]
     private AudioSource audioSource;
+    private AudioSource htAudioSource;
 
     public int count;
 
@@ -39,7 +41,7 @@ public class Memorize : MonoBehaviour
             level_3[i] = Random.Range(0, 3);
         }
 
-        Invoke("StartGameCor", 8.5f);
+        Invoke("StartGameCor", 8.0f);
     }
 
     public void StartGameCor()
@@ -62,7 +64,7 @@ public class Memorize : MonoBehaviour
             {
                 PlayAudio(failClip);
                 // 게임 오버로 게임 오버 씬으로 이동
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(1.2f);
                 SceneLoader.Instance.ChangeScene("GameOver");
             }
         }

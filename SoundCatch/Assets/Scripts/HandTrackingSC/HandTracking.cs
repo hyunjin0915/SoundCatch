@@ -27,6 +27,7 @@ public class HandTracking : MonoBehaviour
     private bool isHandRock = false; // 손 모양이 주먹인가
     private bool isHandScissors = false;
     private HandGesture handGesture;    // 손 모양. getGestureInfo()에 필요해 저장하도록 변경
+    private bool canHand = true;
     // 손 인식 중심 좌표
     private float x;
     private float y;
@@ -40,6 +41,8 @@ public class HandTracking : MonoBehaviour
     public AudioSource subAscr;
     private Sound sound;
     private Sound subsound;
+    public AudioClip tooClose;
+    public AudioClip tooFar;
 
     // 사운드 타이머
     private float soundTimer = 0.0f;
@@ -79,9 +82,8 @@ public class HandTracking : MonoBehaviour
 
             if (dis == 0)
             {
+                Time.timeScale = 1.0f;
                 //Debug.Log("안정");
-
-
                 Vector3 handCenter = new Vector3(x, y, z);
 
                 Debug.DrawRay(handCenter, Vector3.forward, Color.blue, 300.0f); // 임시 레이어 표시
@@ -146,7 +148,9 @@ public class HandTracking : MonoBehaviour
                             case MainGame.memorizeLevel3:
                                 audioSource.panStereo = 0;
                                 subAscr.panStereo = 0;
-
+                                audioSource.loop = false;
+                                canHand = true;
+                                
                                 /*// 소리 출력
                                 PlayLoopSound();
                                 gameObjectFunEvent.SSRaise(handCenter);
@@ -186,15 +190,27 @@ public class HandTracking : MonoBehaviour
             }
             else if (dis == 1)
             {
-                //Debug.Log("너무 가까움");
-
-                // 손이 너무 가깝다는 음성 추가
+                if (!audioGuideManager.audioSource.isPlaying && canHand)
+                {
+                    Time.timeScale = 0;
+                    canHand = false;
+                    audioSource.panStereo = 0;
+                    subAscr.panStereo = 0;
+                    // 소리 출력
+                    PlayLoopSound(tooClose);
+                }
             }
             else if (dis == 2)
             {
-                //Debug.Log("너무 멂");
-
-                // 손이 너무 멀다는 음성 추가
+                if (!audioGuideManager.audioSource.isPlaying && canHand)
+                {
+                    Time.timeScale = 0;
+                    canHand = false;
+                    audioSource.panStereo = 0;
+                    subAscr.panStereo = 0;
+                    // 소리 출력
+                    PlayLoopSound(tooFar);
+                }
             }
             
         }
@@ -208,6 +224,8 @@ public class HandTracking : MonoBehaviour
         }
         else if (data.Equals("out")) // 인식 데이터가 out 일 경우
         {
+            canHand = false;
+            Time.timeScale = 0;
             Debug.Log("out");
             // 후에 인식이 잘 안되고 있다는 음성 등 추가
         }
@@ -267,14 +285,29 @@ public class HandTracking : MonoBehaviour
         return rockFinish;
     }
 
+
+    // 따로 들려줘야 할 소리가 있는 경우
+    private void PlayLoopSound(AudioClip clip)
+    {
+        if (preHit == null || !audioSource.clip.name.Equals(clip.name))
+        {
+            audioSource.Stop();
+            audioSource.loop = true;
+            audioSource.clip = clip;
+            audioSource.volume = 0.8f;
+            audioSource.Play();
+        }
+    }
+
     // 소리 출력(GameObject, Background와 같이 계속 반복해서 들려주는 오디오)
     private void PlayLoopSound()
     {
-        if (preHit == null || hit.collider.gameObject != preHit)
+        if (preHit == null || hit.collider.gameObject != preHit || !canHand)
         {
+            canHand = true;
             sound = hit.collider.GetComponent<Sound>();
             subAscr.Stop();
-            if(sound.isSub)
+            if (sound.isSub)
             {
                 subAscr.loop = true;
                 subAscr.panStereo = -1;
@@ -295,15 +328,15 @@ public class HandTracking : MonoBehaviour
             audioSource.Play();
 
             rockTime = 0.0f;
-        } 
+        }
     }
 
     // 소리 출력(UI와 같이 간격을 주고 반복해서 들려주는 오디오)
     private void PlaySound(float timer) // 매개변수 : 들려주는 간격을 몇 초로 줄 것인지.
     {
-
-        if (preHit == null || hit.collider.gameObject != preHit)
+        if (preHit == null || hit.collider.gameObject != preHit || !canHand)
         {
+            canHand = true;
             sound = hit.collider.GetComponent<Sound>();
 
             audioSource.Stop();
@@ -313,7 +346,8 @@ public class HandTracking : MonoBehaviour
 
             rockTime = 0.0f;
             soundTimer = 0.0f;
-        } else
+        }
+        else
         {
             if (!audioSource.isPlaying)
             {
@@ -326,6 +360,7 @@ public class HandTracking : MonoBehaviour
                 }
             }
         }
+
     }
 
     // 현재 손 위치 정보를 viewportPoint로 변환한 값 리턴
