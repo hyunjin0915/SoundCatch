@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 233849298}
   - component: {fileID: 233849297}
   - component: {fileID: 233849296}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: VisualBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ GameObject:
   - component: {fileID: 241506035}
   - component: {fileID: 241506034}
   - component: {fileID: 241506033}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: SelectGameBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,8 +512,8 @@ GameObject:
   - component: {fileID: 441657520}
   - component: {fileID: 441657519}
   - component: {fileID: 441657518}
-  m_Layer: 3
-  m_Name: Background (1)
+  m_Layer: 9
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -633,7 +633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 514543557}
   - component: {fileID: 514543556}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MenuBoxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,8 +767,8 @@ GameObject:
   - component: {fileID: 1146123043}
   - component: {fileID: 1146123045}
   - component: {fileID: 1146123044}
-  m_Layer: 5
-  m_Name: Text (TMP)
+  m_Layer: 9
+  m_Name: VisualSignText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2DC\uAC01\uC801\n\uD45C\uC2DC"
+  m_text: "\uC2DC\uAC01\uC801\n\uD45C\uC2DC\n\nOn"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 86efff89e183b4b47a32fe8c0ecbe986, type: 2}
   m_sharedMaterial: {fileID: -3942612909082993362, guid: 86efff89e183b4b47a32fe8c0ecbe986, type: 2}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 1349582066}
   - component: {fileID: 1349582065}
   - component: {fileID: 1349582067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SettingManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -920,8 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef614a2720d1cb4db0853aa77f367e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visual: 1
-  v: 0
 --- !u!4 &1349582066
 Transform:
   m_ObjectHideFlags: 0
@@ -1007,7 +1005,7 @@ GameObject:
   - component: {fileID: 1504048731}
   - component: {fileID: 1504048730}
   - component: {fileID: 1504048729}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: QuitGameBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1146,8 +1144,8 @@ GameObject:
   - component: {fileID: 1590855541}
   - component: {fileID: 1590855543}
   - component: {fileID: 1590855542}
-  m_Layer: 5
-  m_Name: Text (TMP) (2)
+  m_Layer: 9
+  m_Name: QuitGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,8 +1372,8 @@ GameObject:
   - component: {fileID: 1807611965}
   - component: {fileID: 1807611967}
   - component: {fileID: 1807611966}
-  m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Layer: 9
+  m_Name: SelectGameText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1509,8 +1507,8 @@ GameObject:
   - component: {fileID: 1877961582}
   - component: {fileID: 1877961581}
   - component: {fileID: 1877961580}
-  m_Layer: 5
-  m_Name: Canvas_MenuText (1)
+  m_Layer: 9
+  m_Name: Canvas_MenuText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1555,7 +1553,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1877961582
 Canvas:
   m_ObjectHideFlags: 0
@@ -1565,7 +1563,7 @@ Canvas:
   m_GameObject: {fileID: 1877961579}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 27914728}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1577,7 +1575,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1877961583
 RectTransform:
@@ -1588,7 +1586,7 @@ RectTransform:
   m_GameObject: {fileID: 1877961579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.015553011, y: 0.015553011, z: 0.015553011}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1146123043}
@@ -1598,9 +1596,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.3504, y: 3.3066}
-  m_SizeDelta: {x: 800, y: 450.07364}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
