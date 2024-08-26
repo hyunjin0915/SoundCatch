@@ -39,6 +39,7 @@ public class HandTracking : MonoBehaviour
     // 오디오
     public AudioSource audioSource;
     public AudioSource subAscr;
+    public AudioSource disAscr;
     private Sound sound;
     private Sound subsound;
     public AudioClip tooClose;
@@ -82,6 +83,8 @@ public class HandTracking : MonoBehaviour
 
             if (dis == 0)
             {
+                disAscr.Stop();
+                disAscr.clip = null;
                 Time.timeScale = 1.0f;
                 //Debug.Log("안정");
                 Vector3 handCenter = new Vector3(x, y, z);
@@ -125,7 +128,9 @@ public class HandTracking : MonoBehaviour
                         // 게임 구분
                         switch (SceneLoader.Instance.mainGame)
                         {
-                            case MainGame.hiddenSound1: // 숨은 소리 찾기의 게임 오브젝트 인식 부분
+                            case MainGame.hiddenSound1:
+                            case MainGame.hiddenSound2:
+                            case MainGame.hiddenSound3:// 숨은 소리 찾기의 게임 오브젝트 인식 부분
 
                                 // 소리 출력
                                 // 인식한 오브젝트가 소리를 계속 반복해서 출력하면 PlayLoopSound()
@@ -167,6 +172,8 @@ public class HandTracking : MonoBehaviour
                                 break;
 
                             case MainGame.tuningSoundNew1: // 음 맞추기의 오브젝트 인식 부분
+                            case MainGame.tuningSoundNew2:
+                            case MainGame.tuningSoundNew3:
                                 // 소리 출력
                                 // 인식한 오브젝트가 소리를 계속 반복해서 출력하면 PlayLoopSound()
                                 // 인식한 오브젝트가 소리를 몇 초간 간격을 가지고 반복해서 출력하면 PlaySound(간격 초)
@@ -181,6 +188,8 @@ public class HandTracking : MonoBehaviour
                                     gameObjectFunEvent.Raise(sound.objectNum);
                                 }
 
+                                break;
+                            case MainGame.explanation:
                                 break;
                         }
                     }
@@ -219,6 +228,7 @@ public class HandTracking : MonoBehaviour
             if (!isCameraOn)
             {
                 SceneLoader.Instance.ChangeScene("Explanation");
+                SceneLoader.Instance.SetMainGameName("explanation");
                 isCameraOn = true;
             }
         }
@@ -289,13 +299,15 @@ public class HandTracking : MonoBehaviour
     // 따로 들려줘야 할 소리가 있는 경우
     private void PlayLoopSound(AudioClip clip)
     {
-        if (preHit == null || !audioSource.clip.name.Equals(clip.name))
+        if (preHit == null || disAscr.clip == null || !disAscr.clip.name.Equals(clip.name))
         {
-            audioSource.Stop();
-            audioSource.loop = true;
-            audioSource.clip = clip;
-            audioSource.volume = 0.8f;
-            audioSource.Play();
+            audioSource.Pause();
+            subAscr.Pause();
+
+            disAscr.loop = true;
+            disAscr.clip = clip;
+            disAscr.volume = 0.8f;
+            disAscr.Play();
         }
     }
 

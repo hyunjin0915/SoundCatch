@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public enum MainGame
 {
+    explanation,
     hiddenSound,
     hiddenSound1, // 숨은 소리 찾기
     hiddenSound2, // 숨은 소리 찾기
@@ -31,10 +32,10 @@ public class SceneLoader : Singleton<SceneLoader>
     }
     IEnumerator LoadSceneAsync(string _sceneName)
     {
-        if(curSceneName.Equals("SelectGame"))
+        /*if (curSceneName.Equals("Explanation"))
         {
-            SetMainGameName(_sceneName);
-        }
+            mainGame = MainGame.explanation;
+        }*/
         if (curSceneName.Equals("SelectLevel"))
         {
             SetMainGameName(_sceneName);
@@ -60,11 +61,11 @@ public class SceneLoader : Singleton<SceneLoader>
     }
     public void SetMainGameName(string _sceneName)
     {
-        if(_sceneName.Equals("hiddenSound1"))
+        if(_sceneName.Equals("HiddenSound1"))
             {mainGame = MainGame.hiddenSound1;}
-        else if(_sceneName.Equals("hiddenSound2"))
+        else if(_sceneName.Equals("HiddenSound2"))
             {mainGame = MainGame.hiddenSound2;}
-        else if(_sceneName.Equals("hiddenSound3"))
+        else if(_sceneName.Equals("HiddenSound3"))
             {mainGame = MainGame.hiddenSound3;}
         else if (_sceneName.Equals("TuningSoundNew1"))
             mainGame = MainGame.tuningSoundNew1;
