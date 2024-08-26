@@ -8,9 +8,12 @@ public class SettingController : MonoBehaviour
 {
     TMP_Text visualText;
 
-    private void Awake()
+    private void Start()
     {
         visualText = GameObject.Find("VisualSignText").GetComponent<TMP_Text>();
+        SceneManager.SetActiveScene(gameObject.scene);
+        Debug.Log(SceneManager.GetActiveScene().name);
+        Time.timeScale = 0;
     }
 
     public void ClickButton0() // 시각적 표시 토글

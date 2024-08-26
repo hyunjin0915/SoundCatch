@@ -245,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 233849294}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.19197, y: 3.3065999, z: 3.2875643}
+  m_LocalPosition: {x: -3.19197, y: 3.3065999, z: -3}
   m_LocalScale: {x: 3.54232, y: 5.427938, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -267,8 +267,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: e6f6d695096029a42b1823c9322e1e37, type: 2}
   rdr: {fileID: 233849299}
-  oriPos: {x: -3.19197, y: 3.3066, z: 3.287564}
-  selectedPos: {x: -3.19197, y: 3.3066, z: 2.5}
+  oriPos: {x: -3.19197, y: 3.3066, z: -3}
+  selectedPos: {x: -3.19197, y: 3.3066, z: -3.75}
 --- !u!114 &233849297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 0
+  objectNum: 3
   cubeSound: {fileID: 8300000, guid: 07db953fbd9849845881e9dd7a148587, type: 3}
   isSub: 0
   subSound: {fileID: 0}
@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 241506031}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3503499, y: 3.3065999, z: 3.2875643}
+  m_LocalPosition: {x: 0.3503499, y: 3.3065999, z: -3}
   m_LocalScale: {x: 3.54232, y: 5.427938, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -409,8 +409,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: 248fc3cd997bec44ab37c5f764c33cdf, type: 2}
   rdr: {fileID: 241506036}
-  oriPos: {x: 0.3503499, y: 3.3066, z: 3.287564}
-  selectedPos: {x: 0.3503499, y: 3.3066, z: 2.5}
+  oriPos: {x: 0.3503499, y: 3.3066, z: -3}
+  selectedPos: {x: 0.3503499, y: 3.3066, z: -3.75}
 --- !u!114 &241506034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 1
+  objectNum: 4
   cubeSound: {fileID: 8300000, guid: 66ea5000f29c46941aa6365477185df0, type: 3}
   isSub: 0
   subSound: {fileID: 0}
@@ -617,7 +617,7 @@ Transform:
   m_GameObject: {fileID: 441657517}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35039997, y: 3.3066, z: 4}
+  m_LocalPosition: {x: 0.35039997, y: 3.3066, z: -1}
   m_LocalScale: {x: 13.08118, y: 8.376029, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -738,6 +738,90 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 233849296}
+        m_TargetAssemblyTypeName: SetMaterial, Assembly-CSharp
+        m_MethodName: OnOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 241506033}
+        m_TargetAssemblyTypeName: SetMaterial, Assembly-CSharp
+        m_MethodName: OnOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1504048729}
+        m_TargetAssemblyTypeName: SetMaterial, Assembly-CSharp
+        m_MethodName: OnOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 233849296}
+        m_TargetAssemblyTypeName: SetMaterial, Assembly-CSharp
+        m_MethodName: OffOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 241506033}
+        m_TargetAssemblyTypeName: SetMaterial, Assembly-CSharp
+        m_MethodName: OffOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1504048729}
+        m_TargetAssemblyTypeName: SetMaterial, Assembly-CSharp
+        m_MethodName: OffOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &514543557
 Transform:
   m_ObjectHideFlags: 0
@@ -747,7 +831,7 @@ Transform:
   m_GameObject: {fileID: 514543555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1021,7 +1105,7 @@ Transform:
   m_GameObject: {fileID: 1504048727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8926702, y: 3.3065999, z: 3.2875643}
+  m_LocalPosition: {x: 3.8926702, y: 3.3065999, z: -3}
   m_LocalScale: {x: 3.54232, y: 5.427938, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1043,8 +1127,8 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: e6f6d695096029a42b1823c9322e1e37, type: 2}
   rdr: {fileID: 1504048732}
-  oriPos: {x: 3.89267, y: 3.3066, z: 3.287564}
-  selectedPos: {x: 3.89267, y: 3.3066, z: 2.5}
+  oriPos: {x: 3.89267, y: 3.3066, z: -3}
+  selectedPos: {x: 3.89267, y: 3.3066, z: -3.75}
 --- !u!114 &1504048730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c392b4dbe9a7534b8477e5b4a1e8a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectNum: 2
+  objectNum: 5
   cubeSound: {fileID: 8300000, guid: 07b9bcbbc9cd1c34496d5e5794afadde, type: 3}
   isSub: 0
   subSound: {fileID: 0}

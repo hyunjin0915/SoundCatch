@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SetMaterial : MonoBehaviour
 {
@@ -14,18 +15,26 @@ public class SetMaterial : MonoBehaviour
     
     public void OnOutline()
     {
-        materials.Add(outline);
-        rdr.sharedMaterials = materials.ToArray();
-        transform.position = selectedPos;
+        // 현재 씬이 활성화된 씬일 때만 작동하도록 처리
+        if (SceneManager.GetActiveScene().name == gameObject.scene.name)
+        {
+            materials.Add(outline);
+            rdr.sharedMaterials = materials.ToArray();
+            transform.position = selectedPos;
+        }
     }
 
     public void OffOutline()
     {
-        if (materials.Count == 2)
+        // 현재 씬이 활성화된 씬일 때만 작동하도록 처리
+        if (SceneManager.GetActiveScene().name == gameObject.scene.name)
         {
-            materials.RemoveAt(1);
+            if (materials.Count == 2)
+            {
+                materials.RemoveAt(1);
+            }
+            rdr.sharedMaterials = materials.ToArray();
+            transform.position = oriPos;
         }
-        rdr.sharedMaterials = materials.ToArray();
-        transform.position = oriPos;
     }
 }

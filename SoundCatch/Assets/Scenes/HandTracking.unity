@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56542950999f8c04f9a915b9a713adfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paused: 0
 --- !u!1 &164931492
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,6 +919,7 @@ MonoBehaviour:
   uiFunEvent: {fileID: 11400000, guid: 8c9622bcb6f532d4c81a72adc26e9ba2, type: 2}
   uiOutlineEvent: {fileID: 11400000, guid: 24ad9bc30af23a34d9cc7e3c583833a1, type: 2}
   guidevoiceSC: {fileID: 1304318081}
+  gamepause: {fileID: 9439601}
   uiNum: -1
 --- !u!4 &1348863964
 Transform:
