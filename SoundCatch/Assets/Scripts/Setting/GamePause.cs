@@ -19,21 +19,25 @@ public class GamePause : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if((SceneManager.GetActiveScene().name != "HandTracking") && (SceneManager.GetActiveScene().name != "Explanation"))
         {
-            paused = !paused;
-            check = true;
-        }
-        if (check) {
-            if(paused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Pause();
-                check = false;
+                paused = !paused;
+                check = true;
             }
-            else if (!paused)
+            if (check)
             {
-                Resume();
-                check = false;
+                if (paused)
+                {
+                    Pause();
+                    check = false;
+                }
+                else if (!paused)
+                {
+                    Resume();
+                    check = false;
+                }
             }
         }
     }
