@@ -81,7 +81,7 @@ public class HandTracking : MonoBehaviour
             // 거리 제한 가져오기
             int dis = int.Parse(points[64]);
 
-            if (dis == 0)
+            if (dis == 1)
             {
                 disAscr.Stop();
                 disAscr.clip = null;
@@ -197,7 +197,7 @@ public class HandTracking : MonoBehaviour
                     preHit = hit.transform.gameObject;
                 }
             }
-            else if (dis == 1)
+            else if (dis == 2)
             {
                 if (!audioGuideManager.audioSource.isPlaying && canHand)
                 {
@@ -209,7 +209,7 @@ public class HandTracking : MonoBehaviour
                     PlayLoopSound(tooClose);
                 }
             }
-            else if (dis == 2)
+            else if (dis == 0)
             {
                 if (!audioGuideManager.audioSource.isPlaying && canHand)
                 {
