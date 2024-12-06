@@ -40,19 +40,61 @@ public class Explanation : MonoBehaviour
     IEnumerator PlayAudioGuides()
     {
         yield return new WaitForSeconds(_curSceneAudioGuide.audioClip.length + 3.0f);
+        yield return new WaitUntil(CheckGesture_Paper);
+        /*
         if(hT.getGestureInfo() == 0)
         {
             _curSceneAudioEventChannel.RaisePlayAudio(paper_AudioGuide);
-        }
+        }*/
         yield return new WaitForSeconds(paper_AudioGuide.audioClip.length + 5.0f);
-        if(hT.getGestureInfo() == 1)
+        yield return new WaitUntil(CheckGesture_Rock);
+        /*if (hT.getGestureInfo() == 1)
         {
             _curSceneAudioEventChannel.RaisePlayAudio(rock_AudioGuide);
-        }
+        }*/
         yield return new WaitForSeconds(rock_AudioGuide.audioClip.length + 5.0f);
-        if(hT.getGestureInfo() == 2)
+        /*if(hT.getGestureInfo() == 2)
         {
             _curSceneAudioEventChannel.RaisePlayAudio(v_AudioGuide);
+        }*/
+        yield return new WaitUntil(CheckGesture_V);
+    }
+
+    public bool CheckGesture_Paper()
+    {
+        if (hT.getGestureInfo() == 0)
+        {
+            _curSceneAudioEventChannel.RaisePlayAudio(paper_AudioGuide);
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
+
+    public bool CheckGesture_Rock()
+    {
+        if (hT.getGestureInfo() == 1)
+        {
+            _curSceneAudioEventChannel.RaisePlayAudio(rock_AudioGuide);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool CheckGesture_V()
+    {
+        if (hT.getGestureInfo() == 2)
+        {
+            _curSceneAudioEventChannel.RaisePlayAudio(v_AudioGuide);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

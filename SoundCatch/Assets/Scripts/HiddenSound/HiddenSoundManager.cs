@@ -16,7 +16,7 @@ public class HiddenSoundManager : MonoBehaviour
     }
      public void WrongBlock()
     {
-        _ClickWrongBlockEC.RaisePlayAudio(_ClickRightBlock);
+        _ClickWrongBlockEC.RaisePlayAudio(_ClickWrongBlock);
     }
      public void ClickBackGround()
     {

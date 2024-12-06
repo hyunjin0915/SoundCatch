@@ -5,15 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/HyunJin.unity
-    guid: 132ecd21d3338c34ab37bd14779e1575
-  - enabled: 1
-    path: Assets/Scenes/Explanation.unity
-    guid: 31028d6678d98534082613fd8febcdcb
   - enabled: 1
     path: Assets/Scenes/HandTracking.unity
     guid: e524b8a83ea731a478bbdd6ec778383f
+  - enabled: 1
+    path: Assets/Scenes/Explanation.unity
+    guid: 31028d6678d98534082613fd8febcdcb
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: abb641062630f404fbc83c7dac702644
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/HyunJin.unity
+    guid: 132ecd21d3338c34ab37bd14779e1575
   - enabled: 1
     path: Assets/Scenes/GameExit.unity
     guid: d1c062da83af727439836eca85e76a37
