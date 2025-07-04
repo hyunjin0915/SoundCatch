@@ -1,6 +1,3 @@
-🔗Check out our project at    [<img src="https://img.shields.io/badge/Notion-000000?style=flat-round&logo=Notion&logoColor=white"/>](https://www.notion.so/SoundCatch-1239103cc1eb80ceb1e7ce72f81f029f)
-
-
 ### 🎓서울여자대학교 소프트웨어융합학과 졸업작품 [2024.04 ~ 2024.11]  
 #### 🏆 스마트미디어학회 논문 우수상 수상
 <br>
